@@ -13,14 +13,15 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Stars } from "@/components/ui/stars";
 import { Section, Container, SectionHeading } from "@/components/ui/section";
-import { ServiceCard } from "@/components/marketing/service-card";
+import { FeaturedServiceCard } from "@/components/marketing/featured-service-card";
+import { Reveal } from "@/components/marketing/reveal";
 import { ProgramStack } from "@/components/marketing/program-stack";
 import { TreatmentsTabs } from "@/components/marketing/treatments-tabs";
 import { MotionBackground } from "@/components/marketing/motion-background";
 import { FeaturedIn } from "@/components/marketing/featured-in";
 import { TestimonialCarousel } from "@/components/marketing/testimonial-carousel";
 import { CtaBand } from "@/components/marketing/cta-band";
-import { services } from "@/lib/data/services";
+import { featuredServices } from "@/lib/data/services";
 import { clinic, trustLogos } from "@/lib/data/clinic";
 import { faqTeaser } from "@/lib/data/faqs";
 
@@ -179,19 +180,34 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* SERVICES */}
+      {/* SERVICES — featured subset, links to full Services page */}
       <Section>
         <Container>
-          <SectionHeading
-            eyebrow="What we treat"
-            title="Five focused service lines"
-            description="Each service is physician-led and grounded in comprehensive testing — so your plan fits your physiology, not a template."
-          />
+          <Reveal>
+            <SectionHeading
+              eyebrow="What we treat"
+              title="Care built around your goals"
+              description="Physician-led, test-driven treatment for how you actually feel. Explore a few of our most-requested services — then see the full range."
+            />
+          </Reveal>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <ServiceCard key={service.slug} service={service} />
+            {featuredServices.map((service, i) => (
+              <Reveal key={service.slug} delay={i * 90} className="h-full">
+                <FeaturedServiceCard service={service} />
+              </Reveal>
             ))}
           </div>
+          <Reveal className="mt-12 flex flex-col items-center gap-3 text-center">
+            <Button asChild size="lg">
+              <Link href="/services">
+                View More Services
+                <ArrowRight className="size-4" />
+              </Link>
+            </Button>
+            <p className="text-sm text-[var(--muted-foreground)]">
+              Hormones, weight loss, aesthetics, regenerative &amp; anti-aging, addiction care — all under one roof.
+            </p>
+          </Reveal>
         </Container>
       </Section>
 
@@ -199,11 +215,13 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-[var(--cream-50)]">
         <MotionBackground soft />
         <Container className="relative z-10 py-16 md:py-24 lg:py-28">
-          <SectionHeading
-            eyebrow="Treatments"
-            title="Medicines, supplements & labs"
-            description="The therapies, supplementation and testing behind every protocol — each one prescribed and dosed to your individual results."
-          />
+          <Reveal>
+            <SectionHeading
+              eyebrow="Treatments"
+              title="Medicines, supplements & labs"
+              description="The therapies, supplementation and testing behind every protocol — each one prescribed and dosed to your individual results."
+            />
+          </Reveal>
           <TreatmentsTabs />
           <div className="mt-10 text-center">
             <Button asChild variant="link">
@@ -325,7 +343,7 @@ export default function HomePage() {
       {/* PROGRAMS */}
       <Section>
         <Container>
-          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+          <Reveal className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <SectionHeading
               align="left"
               eyebrow="Programs"
@@ -337,7 +355,7 @@ export default function HomePage() {
                 View all programs <ArrowRight className="size-4" />
               </Link>
             </Button>
-          </div>
+          </Reveal>
           <div className="mt-12">
             <ProgramStack />
           </div>
@@ -416,11 +434,13 @@ export default function HomePage() {
       {/* TESTIMONIALS */}
       <section className="bg-[var(--cream-50)]">
         <Container className="py-16 md:py-24 lg:py-28">
-          <SectionHeading
-            eyebrow="Patient stories"
-            title="Real results, real people"
-            description={`Rated ${clinic.stats.rating} out of 5 across ${clinic.stats.reviewCount} reviews.`}
-          />
+          <Reveal>
+            <SectionHeading
+              eyebrow="Patient stories"
+              title="Real results, real people"
+              description={`Rated ${clinic.stats.rating} out of 5 across ${clinic.stats.reviewCount} reviews.`}
+            />
+          </Reveal>
           <div className="mt-12">
             <TestimonialCarousel />
           </div>

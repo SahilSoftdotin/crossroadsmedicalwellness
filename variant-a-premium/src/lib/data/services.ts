@@ -14,6 +14,10 @@ export type Service = {
   name: string;
   shortName: string;
   icon: LucideIcon;
+  /** High-quality photo for cards (Unsplash placeholders — swap for real photography). */
+  image: string;
+  /** Surfaced on the homepage's featured-services section. */
+  featured?: boolean;
   tagline: string;
   summary: string;
   heroDescription: string;
@@ -30,6 +34,9 @@ export const services: Service[] = [
     name: "Bioidentical Hormone Therapy (BioTE)",
     shortName: "Hormone Therapy",
     icon: Activity,
+    image:
+      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=800&q=80",
+    featured: true,
     tagline: "Hormone optimization for men & women",
     summary:
       "Restore energy, mood, sleep and vitality with physician-supervised bioidentical hormone optimization using BioTE pellet therapy.",
@@ -96,6 +103,9 @@ export const services: Service[] = [
     name: "Medical Weight Loss",
     shortName: "Weight Loss",
     icon: Scale,
+    image:
+      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=80",
+    featured: true,
     tagline: "GLP-1 medications (semaglutide / tirzepatide)",
     summary:
       "Physician-guided weight loss combining GLP-1 medications, nutrition and metabolic care for sustainable, lasting results.",
@@ -162,6 +172,8 @@ export const services: Service[] = [
     name: "Aesthetics",
     shortName: "Aesthetics",
     icon: Sparkles,
+    image:
+      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
     tagline: "Laser hair restoration & aesthetic treatments",
     summary:
       "Look as vital as you feel with physician-overseen aesthetic treatments, including laser hair restoration.",
@@ -227,6 +239,9 @@ export const services: Service[] = [
     name: "Regenerative & Anti-Aging Therapies",
     shortName: "Regenerative & Anti-Aging",
     icon: Dna,
+    image:
+      "https://images.unsplash.com/photo-1559963110-71b394e7494d?auto=format&fit=crop&w=800&q=80",
+    featured: true,
     tagline: "Therapies that support how you age",
     summary:
       "Evidence-informed regenerative and longevity therapies designed to support healthy aging from the inside out.",
@@ -293,6 +308,8 @@ export const services: Service[] = [
     name: "Addiction Therapy",
     shortName: "Addiction Therapy",
     icon: HeartHandshake,
+    image:
+      "https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=800&q=80",
     tagline: "Specialized, compassionate treatment",
     summary:
       "Confidential, physician-led addiction treatment that treats the whole person with dignity and medical support.",
@@ -358,3 +375,5 @@ export const services: Service[] = [
 export function getService(slug: string): Service | undefined {
   return services.find((s) => s.slug === slug);
 }
+
+export const featuredServices: Service[] = services.filter((s) => s.featured);
