@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   CalendarCheck,
@@ -117,8 +118,20 @@ export default function HomePage() {
 
           <div className="relative animate-fade-in">
             <div className="overflow-hidden rounded-[2.5rem] border border-border bg-card p-3 shadow-soft-lg">
-              <div className="flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-[2rem] bg-gradient-to-br from-sage-light via-clay to-terracotta-light p-8 sm:p-10">
-                <div className="rounded-3xl bg-white/85 p-5 shadow-soft backdrop-blur sm:p-6">
+              <div className="relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-[2rem]">
+                <Image
+                  src="/DrGari1.png"
+                  alt="Dr. Gary Adams, MD, wearing a white coat and holding a clipboard"
+                  fill
+                  sizes="(max-width: 1024px) 90vw, 540px"
+                  className="object-cover"
+                  priority
+                />
+                <div
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brown/60 via-brown/0 to-transparent"
+                  aria-hidden="true"
+                />
+                <div className="relative m-4 rounded-3xl bg-white/90 p-5 shadow-soft backdrop-blur sm:m-6 sm:p-6">
                   <p className="font-display text-lg font-bold text-brown">
                     &ldquo;The first time a doctor looked at my whole picture
                     — not just one complaint at a time.&rdquo;
@@ -129,6 +142,18 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+
+            {/* Secondary headshot accent — DrGari2 */}
+            <div className="absolute -top-6 -right-4 hidden h-24 w-24 overflow-hidden rounded-3xl border-4 border-card shadow-soft-lg ring-2 ring-sage-light sm:-right-6 sm:block sm:h-28 sm:w-28">
+              <Image
+                src="/DrGari2.png"
+                alt="Dr. Gary Adams, MD, smiling headshot"
+                fill
+                sizes="112px"
+                className="object-cover"
+              />
+            </div>
+
             <div className="absolute -bottom-6 -left-6 hidden rounded-3xl bg-card px-5 py-4 shadow-soft-lg sm:flex sm:flex-col">
               <p className="font-display text-3xl font-extrabold text-terracotta">
                 30+

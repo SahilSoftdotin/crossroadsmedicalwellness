@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Award, BookOpen, HeartPulse, Microscope, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -55,9 +56,34 @@ export default function AboutPage() {
         <div className="container-page section-y !pb-12">
           <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-center">
             <div className="order-2 lg:order-1">
-              <div className="aspect-square w-full max-w-md overflow-hidden rounded-3xl bg-primary-soft">
-                <div className="flex h-full items-center justify-center">
-                  <span className="font-display text-7xl font-semibold text-primary/30">GA</span>
+              <div className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden rounded-3xl shadow-elevated ring-1 ring-border">
+                <Image
+                  src="/DrGari1.png"
+                  alt={`Dr. Gary Adams, MD, ${clinic.provider.credentials} physician at ${clinic.name}, in white coat with clipboard`}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/35 via-transparent to-transparent" />
+
+                {/* Secondary headshot accent */}
+                <div className="absolute bottom-4 left-4 flex items-center gap-3 rounded-2xl border border-white/60 bg-background/85 py-2 pr-4 pl-2 shadow-card backdrop-blur-xl">
+                  <div className="relative size-12 shrink-0 overflow-hidden rounded-xl ring-1 ring-border sm:size-14">
+                    <Image
+                      src="/DrGari2.png"
+                      alt="Dr. Gary Adams, MD, smiling headshot"
+                      fill
+                      sizes="56px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="leading-tight">
+                    <p className="font-display text-sm font-semibold text-primary">
+                      {clinic.provider.name}, {clinic.provider.credentials}
+                    </p>
+                    <p className="text-xs text-muted-foreground">{clinic.name}</p>
+                  </div>
                 </div>
               </div>
             </div>

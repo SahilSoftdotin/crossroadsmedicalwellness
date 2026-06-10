@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   Award,
   Microscope,
@@ -8,7 +9,6 @@ import {
   Stethoscope,
 } from "lucide-react";
 import { Container, Section, SectionHeading } from "@/components/ui/section";
-import { Badge } from "@/components/ui/badge";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { clinic } from "@/lib/data/clinic";
 
@@ -52,8 +52,8 @@ export default function AboutPage() {
   return (
     <>
       <section className="border-b border-[var(--border)] bg-[var(--cream-50)]">
-        <Container className="grid items-center gap-12 py-16 md:py-20 lg:grid-cols-[1.1fr_0.9fr]">
-          <div>
+        <Container className="grid items-center gap-12 py-16 pb-20 md:py-20 md:pb-24 lg:grid-cols-[1.05fr_0.95fr] lg:pb-28">
+          <div className="fade-up">
             <span className="eyebrow">About the practice</span>
             <h1 className="mt-3 font-display text-4xl font-semibold leading-tight text-[var(--foreground)] md:text-5xl">
               Care led by a physician who takes the time to listen
@@ -62,25 +62,56 @@ export default function AboutPage() {
               {clinic.positioning} Crossroads Medical Wellness was built on a simple conviction: that
               good medicine starts with understanding the whole person — and the time to do it right.
             </p>
-          </div>
-          <div className="rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--forest-800)] p-8 text-[var(--primary-foreground)] shadow-[var(--shadow-lg)]">
-            <div className="flex items-center gap-4">
-              <span className="grid size-16 place-items-center rounded-full bg-[var(--forest-700)] font-display text-2xl font-semibold text-[var(--brass-400)]">
-                GA
+
+            <div className="mt-8 inline-flex items-center gap-4 rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--surface)] p-4 pr-6 shadow-[var(--shadow-sm)]">
+              <span className="relative grid size-14 shrink-0 place-items-center overflow-hidden rounded-full ring-2 ring-[var(--brass-400)] ring-offset-2 ring-offset-[var(--surface)]">
+                <Image
+                  src="/DrGari2.png"
+                  alt="Dr. Gary Adams, MD"
+                  fill
+                  sizes="56px"
+                  className="object-cover"
+                />
               </span>
               <div>
-                <p className="font-display text-2xl font-semibold">{clinic.provider.name}</p>
-                <p className="text-[var(--brass-400)]">{clinic.provider.credentials} · Founder & Physician</p>
+                <p className="font-display text-lg font-semibold leading-tight text-[var(--foreground)]">
+                  {clinic.provider.name}
+                </p>
+                <p className="text-sm text-[var(--brass-700)]">
+                  {clinic.provider.credentials} · Founder &amp; Physician
+                </p>
               </div>
             </div>
-            <p className="mt-6 text-sm leading-relaxed text-[var(--forest-200)]">
-              With more than three decades of experience, Dr. Adams blends the rigor of traditional
-              medicine with the curiosity of functional, root-cause care — and reviews every patient
-              protocol personally.
-            </p>
-            <Badge variant="accent" className="mt-6">
-              {clinic.stats.yearsExperience} years of experience
-            </Badge>
+          </div>
+
+          {/* Featured portrait */}
+          <div className="fade-up relative mx-auto w-full max-w-sm lg:max-w-none">
+            <div
+              aria-hidden="true"
+              className="absolute -inset-3 -z-10 rounded-[calc(var(--radius-xl)+0.75rem)] bg-gradient-to-br from-[var(--brass-400)] via-[var(--brass-200)] to-[var(--forest-600)] opacity-40 blur-2xl"
+            />
+            <div className="relative overflow-hidden rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--surface)] p-2 shadow-[var(--shadow-lg)]">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[calc(var(--radius-xl)-0.5rem)]">
+                <Image
+                  src="/DrGari1.png"
+                  alt="Dr. Gary Adams, MD, standing in a white coat reviewing patient notes on a clipboard"
+                  fill
+                  sizes="(min-width: 1024px) 36rem, (min-width: 640px) 24rem, 90vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* Floating experience badge */}
+            <div className="absolute -bottom-5 left-1/2 w-[calc(100%-2.5rem)] max-w-xs -translate-x-1/2 rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--forest-800)] px-5 py-4 text-[var(--primary-foreground)] shadow-[var(--shadow-lg)] sm:left-auto sm:right-[-1.25rem] sm:translate-x-0">
+              <p className="font-display text-2xl font-semibold text-[var(--brass-400)]">
+                {clinic.stats.yearsExperience}
+              </p>
+              <p className="text-xs leading-snug text-[var(--forest-200)]">
+                years of clinical experience
+              </p>
+            </div>
           </div>
         </Container>
       </section>

@@ -143,8 +143,14 @@ export default function HomePage() {
                 ))}
               </div>
               <div className="mt-6 flex items-center gap-3 rounded-[var(--radius-md)] bg-[var(--forest-800)] p-4 text-[var(--primary-foreground)]">
-                <span className="grid size-10 place-items-center rounded-full bg-[var(--forest-700)] text-sm font-semibold text-[var(--brass-400)]">
-                  GA
+                <span className="relative grid size-10 shrink-0 place-items-center overflow-hidden rounded-full ring-2 ring-[var(--brass-400)]">
+                  <Image
+                    src="/DrGari2.png"
+                    alt="Dr. Gary Adams, MD"
+                    fill
+                    sizes="40px"
+                    className="object-cover"
+                  />
                 </span>
                 <div className="text-sm">
                   <p className="font-medium">Dr. Gary Adams, MD</p>

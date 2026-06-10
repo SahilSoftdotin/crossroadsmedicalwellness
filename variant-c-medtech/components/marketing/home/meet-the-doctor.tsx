@@ -31,16 +31,34 @@ export function MeetTheDoctor() {
         <div className="relative" ref={ref}>
           <motion.div
             style={{ y }}
-            className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[32px] shadow-elevated ring-1 ring-border"
+            className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden rounded-[32px] shadow-elevated ring-1 ring-border"
           >
             <Image
-              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=900&q=80"
-              alt={`Portrait of ${clinic.provider.name}, physician at ${clinic.name}`}
+              src="/DrGari1.png"
+              alt={`Dr. Gary Adams, MD, ${clinic.provider.credentials} physician at ${clinic.name}, in white coat with clipboard`}
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover"
+              priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
+
+            {/* Secondary headshot accent */}
+            <motion.div
+              initial={reduce ? false : { opacity: 0, scale: 0.9 }}
+              whileInView={reduce ? {} : { opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+              className="absolute right-4 top-4 size-16 overflow-hidden rounded-2xl border-2 border-white/80 shadow-card ring-1 ring-border sm:size-20"
+            >
+              <Image
+                src="/DrGari2.png"
+                alt="Dr. Gary Adams, MD, smiling headshot"
+                fill
+                sizes="80px"
+                className="object-cover"
+              />
+            </motion.div>
           </motion.div>
 
           {/* Floating credential cards */}

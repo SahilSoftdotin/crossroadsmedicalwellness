@@ -1,5 +1,14 @@
 import type { Metadata } from "next";
-import { Award, HeartHandshake, Microscope, Users2 } from "lucide-react";
+import Image from "next/image";
+import {
+  Award,
+  BadgeCheck,
+  GraduationCap,
+  HeartHandshake,
+  Microscope,
+  Stethoscope,
+  Users2,
+} from "lucide-react";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { CtaSection } from "@/components/marketing/cta-section";
 
@@ -8,6 +17,33 @@ export const metadata: Metadata = {
   description:
     "Meet Dr. Gary Adams and learn about Crossroads Medical Wellness's integrative, physician-owned approach to care in Athens, AL.",
 };
+
+const credentials = [
+  {
+    icon: Award,
+    title: "30+ Years in Practice",
+    description:
+      "Decades of clinical experience across primary care, regenerative, and integrative medicine.",
+  },
+  {
+    icon: BadgeCheck,
+    title: "BioTE Certified Provider",
+    description:
+      "Certified in BioTE bioidentical hormone replacement pellet therapy for men and women.",
+  },
+  {
+    icon: Stethoscope,
+    title: "Specialties",
+    description:
+      "Hormone optimization, medical weight loss (GLP-1), and age-management medicine.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Education & Training",
+    description:
+      "Doctor of Medicine (MD) with continued advanced training in functional and longevity medicine.",
+  },
+];
 
 const values = [
   {
@@ -67,17 +103,70 @@ export default function AboutPage() {
               for you, not corporate policy.
             </p>
           </div>
-          <div className="flex justify-center">
-            <div className="flex h-72 w-72 items-center justify-center rounded-[3rem] bg-gradient-to-br from-terracotta-light via-clay to-sage-light shadow-soft-lg sm:h-80 sm:w-80">
-              <div className="flex h-56 w-56 flex-col items-center justify-center rounded-[2.5rem] bg-card text-center shadow-soft sm:h-64 sm:w-64">
-                <p className="font-display text-5xl font-extrabold text-terracotta">
-                  30+
+          <div className="relative mx-auto w-full max-w-sm animate-fade-in">
+            {/* Soft tinted ring behind the portrait */}
+            <div
+              className="pointer-events-none absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-terracotta-light/40 via-clay/40 to-sage-light/40 blur-md"
+              aria-hidden="true"
+            />
+            {/* Main portrait — DrGari1 */}
+            <div className="relative overflow-hidden rounded-[2rem] border border-border bg-card p-2 shadow-soft-lg sm:rounded-[2.5rem] sm:p-3">
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.5rem] sm:rounded-[2rem]">
+                <Image
+                  src="/DrGari1.png"
+                  alt="Dr. Gary Adams, MD, wearing a white coat and holding a clipboard"
+                  fill
+                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 400px"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
+
+            {/* Secondary headshot accent — DrGari2, overlapping */}
+            <div className="absolute -bottom-6 -right-4 flex items-center gap-3 rounded-3xl bg-card p-3 pr-5 shadow-soft-lg sm:-right-8 sm:p-3.5 sm:pr-6">
+              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-2xl ring-2 ring-sage-light sm:h-16 sm:w-16">
+                <Image
+                  src="/DrGari2.png"
+                  alt="Dr. Gary Adams, MD, smiling headshot"
+                  fill
+                  sizes="64px"
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <p className="font-display text-base font-extrabold leading-tight text-terracotta sm:text-lg">
+                  30+ Years
                 </p>
-                <p className="mt-2 px-6 text-sm font-semibold text-brown-soft">
-                  years of clinical experience
+                <p className="text-xs font-semibold leading-tight text-brown-soft">
+                  Clinical Experience
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Credentials */}
+      <section className="pb-16 sm:pb-20 lg:pb-24">
+        <div className="container-wide">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {credentials.map((credential) => (
+              <div
+                key={credential.title}
+                className="rounded-3xl border border-border bg-card p-6 shadow-soft"
+              >
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-clay text-terracotta-dark">
+                  <credential.icon className="h-6 w-6" aria-hidden="true" />
+                </span>
+                <h3 className="mt-4 font-display text-base font-bold text-brown">
+                  {credential.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-brown-soft">
+                  {credential.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -154,8 +243,8 @@ export default function AboutPage() {
             Dr. Gary Adams, MD
           </p>
           <p className="mt-2 text-sm font-semibold text-brown-soft sm:text-base">
-            30+ years of clinical experience &middot; Physician-Owner,
-            Crossroads Medical Wellness &middot; Athens, AL
+            BioTE Certified &middot; Physician-Owner, Crossroads Medical
+            Wellness &middot; Athens, AL
           </p>
         </div>
       </section>
