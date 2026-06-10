@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion, useReducedMotion } from "framer-motion";
 import { HeroBackground } from "@/components/marketing/home/hero-background";
+import { MagneticButton } from "@/components/motion/magnetic";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -75,7 +76,8 @@ export function Hero() {
             Physician-owned · Athens, AL
           </Badge>
           <h1 className="text-balance font-display text-4xl font-semibold leading-[1.05] tracking-tight text-primary sm:text-5xl lg:text-[4.1rem]">
-            Complete integrative care, under one roof.
+            Complete integrative care,{" "}
+            <span className="text-shimmer">under one roof</span>.
           </h1>
           <p className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-muted-foreground">
             Crossroads Medical Wellness pairs Dr. Gary Adams&rsquo; 30+ years of clinical
@@ -83,15 +85,19 @@ export function Hero() {
             weight loss, regenerative therapies and more, with one care team and no referrals.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <Button size="lg" className="h-13 px-7 text-base shadow-glow" asChild>
-              <Link href="/assessment">
-                Start your assessment
-                <ArrowRight data-icon="inline-end" />
-              </Link>
-            </Button>
-            <Button size="lg" variant="outline" className="h-13 px-7 text-base" asChild>
-              <Link href="/services">Explore services</Link>
-            </Button>
+            <MagneticButton>
+              <Button size="lg" className="btn-sheen h-13 px-7 text-base shadow-glow" asChild>
+                <Link href="/assessment">
+                  Start your assessment
+                  <ArrowRight data-icon="inline-end" />
+                </Link>
+              </Button>
+            </MagneticButton>
+            <MagneticButton>
+              <Button size="lg" variant="outline" className="h-13 px-7 text-base" asChild>
+                <Link href="/services">Explore services</Link>
+              </Button>
+            </MagneticButton>
           </div>
           <ul className="mt-9 flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2">
             {["Lab-guided protocols", "BioTE certified", "GLP-1 medical weight loss"].map((item) => (

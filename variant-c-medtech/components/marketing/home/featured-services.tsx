@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { getIcon } from "@/components/marketing/icon-map";
 import { Reveal, Stagger, StaggerItem, motion, useReducedMotion } from "@/components/motion/motion-primitives";
+import { TiltCard } from "@/components/motion/tilt-card";
 import { featuredServices } from "@/lib/data/services";
 
 export function FeaturedServices() {
@@ -27,12 +28,13 @@ export function FeaturedServices() {
           {featuredServices.map((service) => {
             const Icon = getIcon(service.icon);
             return (
-              <StaggerItem key={service.slug}>
+              <StaggerItem key={service.slug} className="h-full">
                 <motion.div
                   whileHover={reduce ? undefined : { y: -6 }}
                   transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   className="group h-full"
                 >
+                  <TiltCard className="h-full rounded-[28px]">
                   <Link
                     href={`/services/${service.slug}`}
                     className="flex h-full flex-col overflow-hidden rounded-[28px] bg-card shadow-card ring-1 ring-border transition-shadow duration-300 hover:shadow-elevated focus-visible:outline-none"
@@ -66,6 +68,7 @@ export function FeaturedServices() {
                       </span>
                     </div>
                   </Link>
+                  </TiltCard>
                 </motion.div>
               </StaggerItem>
             );

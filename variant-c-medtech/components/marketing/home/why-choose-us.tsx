@@ -16,6 +16,7 @@ import {
   motion,
   useReducedMotion,
 } from "@/components/motion/motion-primitives";
+import { TiltCard } from "@/components/motion/tilt-card";
 
 const reasons = [
   {
@@ -75,17 +76,19 @@ export function WhyChooseUs() {
         <Stagger className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" stagger={0.08}>
           {reasons.map((r) => (
             <StaggerItem key={r.title} className={r.wide ? "lg:col-span-1" : ""}>
-              <motion.div
-                whileHover={reduce ? undefined : { y: -6 }}
-                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="flex h-full flex-col gap-4 rounded-[26px] border border-white/60 bg-background/70 p-7 shadow-card backdrop-blur-xl"
-              >
-                <span className="flex size-12 items-center justify-center rounded-2xl bg-primary-soft text-primary">
-                  <r.icon className="size-6" aria-hidden="true" />
-                </span>
-                <h3 className="font-display text-lg font-semibold text-primary">{r.title}</h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">{r.body}</p>
-              </motion.div>
+              <TiltCard className="h-full rounded-[26px]" max={6}>
+                <motion.div
+                  whileHover={reduce ? undefined : { y: -6 }}
+                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex h-full flex-col gap-4 rounded-[26px] border border-white/60 bg-background/70 p-7 shadow-card backdrop-blur-xl"
+                >
+                  <span className="flex size-12 items-center justify-center rounded-2xl bg-primary-soft text-primary">
+                    <r.icon className="size-6" aria-hidden="true" />
+                  </span>
+                  <h3 className="font-display text-lg font-semibold text-primary">{r.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">{r.body}</p>
+                </motion.div>
+              </TiltCard>
             </StaggerItem>
           ))}
         </Stagger>

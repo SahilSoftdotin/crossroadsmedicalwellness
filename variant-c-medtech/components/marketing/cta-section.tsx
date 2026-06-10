@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { clinic } from "@/lib/data/clinic";
+import { MagneticButton } from "@/components/motion/magnetic";
 
 export function CtaSection({
   title = "Ready to find out what your numbers say about you?",
@@ -23,23 +26,27 @@ export function CtaSection({
               {description}
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button size="lg" className="h-12 w-full bg-accent px-6 text-base text-accent-foreground hover:bg-accent/90 sm:w-auto" asChild>
-                <Link href="/assessment">
-                  Start Your Assessment
-                  <ArrowRight data-icon="inline-end" />
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="h-12 w-full border-primary-foreground/30 bg-transparent px-6 text-base text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground sm:w-auto"
-                asChild
-              >
-                <a href={clinic.phoneHref}>
-                  <Phone data-icon="inline-start" />
-                  Call {clinic.phone}
-                </a>
-              </Button>
+              <MagneticButton className="w-full sm:w-auto">
+                <Button size="lg" className="btn-sheen h-12 w-full bg-accent px-6 text-base text-accent-foreground hover:bg-accent/90 sm:w-auto" asChild>
+                  <Link href="/assessment">
+                    Start Your Assessment
+                    <ArrowRight data-icon="inline-end" />
+                  </Link>
+                </Button>
+              </MagneticButton>
+              <MagneticButton className="w-full sm:w-auto">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="h-12 w-full border-primary-foreground/30 bg-transparent px-6 text-base text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground sm:w-auto"
+                  asChild
+                >
+                  <a href={clinic.phoneHref}>
+                    <Phone data-icon="inline-start" />
+                    Call {clinic.phone}
+                  </a>
+                </Button>
+              </MagneticButton>
             </div>
           </div>
         </div>

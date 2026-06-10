@@ -60,12 +60,24 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
-  --shadow-card: 0 1px 2px 0 rgb(13 31 60 / 0.04), 0 1px 3px 0 rgb(13 31 60 / 0.06);
-  --shadow-elevated: 0 4px 12px -2px rgb(13 31 60 / 0.08), 0 2px 6px -2px rgb(13 31 60 / 0.06);
-  --shadow-glow: 0 0 0 1px rgb(47 210 196 / 0.15), 0 8px 24px -8px rgb(47 210 196 / 0.35);
+  /* Refined, layered depth — softer ambient + a tighter contact shadow for
+     premium glassmorphism. Tuned to keep contrast and avoid muddiness. */
+  --shadow-card:
+    0 1px 2px -1px rgb(13 31 60 / 0.05),
+    0 2px 6px -2px rgb(13 31 60 / 0.07),
+    0 8px 20px -12px rgb(13 31 60 / 0.10);
+  --shadow-elevated:
+    0 2px 4px -2px rgb(13 31 60 / 0.06),
+    0 8px 20px -6px rgb(13 31 60 / 0.10),
+    0 24px 48px -18px rgb(13 31 60 / 0.18);
+  --shadow-glow:
+    0 0 0 1px rgb(47 210 196 / 0.18),
+    0 8px 24px -8px rgb(47 210 196 / 0.38),
+    0 18px 48px -20px rgb(13 31 60 / 0.30);
 
   --animate-fade-up: fade-up 0.5s ease-out forwards;
   --animate-marquee: marquee 32s linear infinite;
+  --animate-shimmer: shimmer 6s ease-in-out infinite;
 }
 
 @keyframes fade-up {
@@ -85,6 +97,25 @@
   }
   to {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes sheen-sweep {
+  0% {
+    transform: translateX(-130%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(230%) skewX(-18deg);
   }
 }
 
@@ -242,5 +273,64 @@
       linear-gradient(to right, color-mix(in oklch, var(--primary) 6%, transparent) 1px, transparent 1px),
       linear-gradient(to bottom, color-mix(in oklch, var(--primary) 6%, transparent) 1px, transparent 1px);
     background-size: 40px 40px;
+  }
+
+  /* Animated navy <-> teal gradient text clip for a key hero phrase. */
+  .text-shimmer {
+    background-image: linear-gradient(
+      100deg,
+      var(--primary) 0%,
+      color-mix(in oklch, var(--accent), black 18%) 30%,
+      var(--accent) 50%,
+      color-mix(in oklch, var(--accent), black 18%) 70%,
+      var(--primary) 100%
+    );
+    background-size: 220% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: var(--animate-shimmer);
+  }
+
+  /* Subtle light sweep on primary buttons. The sweep element is added by the
+     button itself; this keeps the effect contained + clipped. */
+  .btn-sheen {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .btn-sheen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      rgb(255 255 255 / 0.35) 50%,
+      transparent 100%
+    );
+    width: 60%;
+    transform: translateX(-130%) skewX(-18deg);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .btn-sheen:hover::after {
+    opacity: 1;
+    animation: sheen-sweep 0.85s ease;
+  }
+}
+
+/* All discretionary motion collapses under reduced-motion. The progress bar
+   remains (handled in JS without smoothing); shimmer + sheen + entrances go
+   static here as a belt-and-braces guard. */
+@media (prefers-reduced-motion: reduce) {
+  .text-shimmer {
+    animation: none;
+    background-position: 0% 50%;
+  }
+  .btn-sheen::after {
+    display: none;
   }
 }

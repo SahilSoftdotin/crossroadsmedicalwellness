@@ -7,6 +7,7 @@ import { Activity, ArrowRight, Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { clinic } from "@/lib/data/clinic";
+import { PageEntrance } from "@/components/motion/page-entrance";
 
 const navLinks = [
   { href: "/services", label: "Services" },
@@ -39,7 +40,7 @@ export function SiteHeader() {
           : "border-transparent bg-background/40 backdrop-blur-md"
       )}
     >
-      <div className="container-page flex h-16 items-center justify-between gap-4">
+      <PageEntrance className="container-page flex h-16 items-center justify-between gap-4">
         <Link
           href="/"
           className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-primary"
@@ -96,7 +97,7 @@ export function SiteHeader() {
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
-      </div>
+      </PageEntrance>
 
       {open && (
         <div className="border-t border-border bg-background lg:hidden">
