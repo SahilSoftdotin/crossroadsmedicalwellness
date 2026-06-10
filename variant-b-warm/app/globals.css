@@ -1,0 +1,242 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ==========================================================================
+   Crossroads Medical Wellness — "Warm Wellness" Design Tokens (Variant B)
+   Mood: approachable, human, spa-like, friendly, cozy
+   ========================================================================== */
+
+:root {
+  /* Radii — generous, rounded, pill-friendly */
+  --radius: 1rem;
+  --radius-sm: calc(var(--radius) - 0.5rem);
+  --radius-md: calc(var(--radius) - 0.25rem);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 0.5rem);
+  --radius-pill: 999px;
+
+  /* Core palette */
+  --color-cream: #f4ece1;
+  --color-cream-soft: #faf5ec;
+  --color-card: #fffcf6;
+  --color-terracotta: #c7693f;
+  --color-terracotta-dark: #a8552f;
+  --color-terracotta-light: #e9a787;
+  --color-sage: #8a9b7e;
+  --color-sage-dark: #6f8264;
+  --color-sage-light: #c9d4bf;
+  --color-brown: #4a3b2f;
+  --color-brown-soft: #7a6b5d;
+  --color-gold: #d8a657;
+  --color-clay: #e7d8c7;
+
+  /* Semantic tokens — light mode (only mode for this prototype) */
+  --background: var(--color-cream);
+  --foreground: var(--color-brown);
+
+  --card: var(--color-card);
+  --card-foreground: var(--color-brown);
+
+  --popover: var(--color-card);
+  --popover-foreground: var(--color-brown);
+
+  --primary: var(--color-terracotta);
+  --primary-foreground: #fffaf4;
+
+  --secondary: var(--color-sage);
+  --secondary-foreground: #2f3a29;
+
+  --accent: var(--color-clay);
+  --accent-foreground: var(--color-brown);
+
+  --muted: #ece1d2;
+  --muted-foreground: var(--color-brown-soft);
+
+  --destructive: #c0533f;
+  --destructive-foreground: #fffaf4;
+
+  --success: #6f8a5e;
+  --success-foreground: #fffaf4;
+
+  --warning: var(--color-gold);
+  --warning-foreground: #4a3b2f;
+
+  --border: #e3d4c2;
+  --input: #e3d4c2;
+  --ring: var(--color-terracotta);
+
+  /* Chart palette — warm, accessible, distinguishable */
+  --chart-1: var(--color-terracotta);
+  --chart-2: var(--color-sage);
+  --chart-3: var(--color-gold);
+  --chart-4: #7596a8;
+  --chart-5: #b07da0;
+
+  /* Sidebar / portal nav tokens */
+  --sidebar: var(--color-card);
+  --sidebar-foreground: var(--color-brown);
+  --sidebar-primary: var(--color-terracotta);
+  --sidebar-primary-foreground: #fffaf4;
+  --sidebar-accent: var(--color-clay);
+  --sidebar-accent-foreground: var(--color-brown);
+  --sidebar-border: #e3d4c2;
+  --sidebar-ring: var(--color-terracotta);
+
+  /* Shadows — soft, warm-tinted */
+  --shadow-sm: 0 1px 2px 0 rgb(74 59 47 / 0.06);
+  --shadow: 0 2px 8px -2px rgb(74 59 47 / 0.10), 0 1px 3px -1px rgb(74 59 47 / 0.06);
+  --shadow-md: 0 6px 16px -4px rgb(74 59 47 / 0.12), 0 2px 6px -2px rgb(74 59 47 / 0.08);
+  --shadow-lg: 0 16px 32px -8px rgb(74 59 47 / 0.16), 0 4px 12px -4px rgb(74 59 47 / 0.08);
+  --shadow-glow: 0 8px 28px -6px rgb(199 105 63 / 0.35);
+}
+
+@theme inline {
+  /* Fonts */
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-cream: var(--color-cream);
+  --color-cream-soft: var(--color-cream-soft);
+  --color-terracotta: var(--color-terracotta);
+  --color-terracotta-dark: var(--color-terracotta-dark);
+  --color-terracotta-light: var(--color-terracotta-light);
+  --color-sage: var(--color-sage);
+  --color-sage-dark: var(--color-sage-dark);
+  --color-sage-light: var(--color-sage-light);
+  --color-brown: var(--color-brown);
+  --color-brown-soft: var(--color-brown-soft);
+  --color-gold: var(--color-gold);
+  --color-clay: var(--color-clay);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Radii */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-xl);
+  --radius-pill: var(--radius-pill);
+
+  /* Shadows */
+  --shadow-soft-sm: var(--shadow-sm);
+  --shadow-soft: var(--shadow);
+  --shadow-soft-md: var(--shadow-md);
+  --shadow-soft-lg: var(--shadow-lg);
+  --shadow-glow: var(--shadow-glow);
+
+  /* Animations */
+  --animate-fade-up: fade-up 0.6s ease-out both;
+  --animate-fade-in: fade-in 0.5s ease-out both;
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "ss01" on, "cv01" on;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+  ::selection {
+    background-color: var(--color-terracotta-light);
+    color: var(--color-brown);
+  }
+
+  /* Focus visibility for accessibility */
+  :focus-visible {
+    outline: 2px solid var(--color-terracotta);
+    outline-offset: 2px;
+    border-radius: 0.25rem;
+  }
+}
+
+@layer utilities {
+  .container-wide {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+  .container-narrow {
+    @apply mx-auto w-full max-w-3xl px-4 sm:px-6 lg:px-8;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .section-py {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
