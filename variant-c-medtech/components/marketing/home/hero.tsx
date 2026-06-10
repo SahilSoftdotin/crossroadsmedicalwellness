@@ -12,7 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion, useReducedMotion } from "framer-motion";
-import { HeroAccent } from "@/components/motion/hero-accent";
+import { HeroBackground } from "@/components/marketing/home/hero-background";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -60,24 +60,9 @@ export function Hero() {
         };
 
   return (
-    <section className="grid-pattern relative overflow-hidden bg-card">
-      {/* Soft animated gradient orbs */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-        <motion.div
-          className="absolute -top-32 -left-24 size-[32rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklch,var(--accent),transparent_55%),transparent_70%)] blur-3xl"
-          animate={reduce ? {} : { scale: [1, 1.12, 1], opacity: [0.5, 0.7, 0.5] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        />
-        <motion.div
-          className="absolute -bottom-40 right-[-10%] size-[34rem] rounded-full bg-[radial-gradient(circle,color-mix(in_oklch,var(--primary),transparent_70%),transparent_70%)] blur-3xl"
-          animate={reduce ? {} : { scale: [1.1, 1, 1.1], opacity: [0.4, 0.6, 0.4] }}
-          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-        />
-        {/* Lazy, reduced-motion-gated R3F accent — sits behind hero content,
-            falls back to the gradient orbs above on mobile / reduced motion. */}
-        <HeroAccent />
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-primary-soft/50 via-transparent to-transparent" />
+    <section className="relative overflow-hidden bg-card">
+      {/* Healthspan-style flowing aurora background */}
+      <HeroBackground />
 
       <div className="container-page relative grid gap-12 py-20 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-32">
         <motion.div
