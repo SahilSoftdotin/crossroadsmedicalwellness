@@ -57,13 +57,32 @@ export default function HomePage() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden">
+        {/* Dr. Adams portrait — a clearly visible hero backdrop on the right */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-20">
+          <Image
+            src="/DrGari2.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[82%_12%]"
+          />
+        </div>
+        {/* Readability scrim: opaque cream behind the headline (left), fading to
+            fully clear over the photo (right). No blur — the photo stays sharp. */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 -z-10"
           style={{
             background:
-              "radial-gradient(60% 50% at 80% 0%, rgba(201,168,106,0.16), transparent 60%), radial-gradient(50% 40% at 0% 30%, rgba(16,49,43,0.06), transparent 60%)",
+              "linear-gradient(100deg, var(--cream-100) 0%, var(--cream-100) 32%, color-mix(in srgb, var(--cream-100) 70%, transparent) 47%, color-mix(in srgb, var(--cream-100) 25%, transparent) 66%, transparent 84%), radial-gradient(55% 45% at 90% 2%, rgba(201,168,106,0.20), transparent 60%)",
           }}
+        />
+        {/* Slightly stronger cream veil on small/medium screens (stacked layout)
+            so the headline stays high-contrast; cleared on large screens. */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 bg-[var(--cream-100)]/45 lg:hidden"
         />
         <Container className="grid items-center gap-12 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:py-28">
           <div className="fade-up">
@@ -110,7 +129,7 @@ export default function HomePage() {
 
           {/* Hero visual card */}
           <div className="fade-up relative">
-            <div className="relative overflow-hidden rounded-[var(--radius-xl)] border border-[var(--border)] bg-[var(--surface)] p-7 shadow-[var(--shadow-lg)]">
+            <div className="relative overflow-hidden rounded-[var(--radius-xl)] border border-white/70 bg-[var(--surface)]/68 p-7 shadow-[var(--shadow-lg)] backdrop-blur-xl">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="eyebrow">Your wellness snapshot</p>
