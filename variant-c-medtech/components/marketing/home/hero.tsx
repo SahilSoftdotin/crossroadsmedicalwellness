@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { motion, useReducedMotion } from "framer-motion";
+import { HeroAccent } from "@/components/motion/hero-accent";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -72,6 +73,9 @@ export function Hero() {
           animate={reduce ? {} : { scale: [1.1, 1, 1.1], opacity: [0.4, 0.6, 0.4] }}
           transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
         />
+        {/* Lazy, reduced-motion-gated R3F accent — sits behind hero content,
+            falls back to the gradient orbs above on mobile / reduced motion. */}
+        <HeroAccent />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-primary-soft/50 via-transparent to-transparent" />
 
@@ -174,7 +178,7 @@ export function Hero() {
                   ? {}
                   : { opacity: 1, y: 0, ...floatAnim(i) }
               }
-              transition={{ duration: 0.6, ease: EASE, delay: 0.4 + i * 0.12 }}
+              transition={{ duration: 0.6, ease: EASE, delay: 0.35 + i * 0.09 }}
             >
               <span
                 className={`flex size-9 items-center justify-center rounded-xl ${

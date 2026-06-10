@@ -77,7 +77,7 @@ export function WhyChooseUs() {
             <StaggerItem key={r.title} className={r.wide ? "lg:col-span-1" : ""}>
               <motion.div
                 whileHover={reduce ? undefined : { y: -6 }}
-                transition={{ type: "spring", stiffness: 300, damping: 22 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 className="flex h-full flex-col gap-4 rounded-[26px] border border-white/60 bg-background/70 p-7 shadow-card backdrop-blur-xl"
               >
                 <span className="flex size-12 items-center justify-center rounded-2xl bg-primary-soft text-primary">

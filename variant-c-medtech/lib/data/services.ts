@@ -42,9 +42,9 @@ export const services: Service[] = [
     category: "Hormone & Metabolic",
     featured: true,
     image:
-      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1200&q=80",
     imageAlt:
-      "Active man hiking outdoors, representing restored energy from hormone optimization",
+      "Two hikers on a mountain trail with snow-capped peaks, representing restored energy and vitality from hormone optimization",
     summary:
       "Restore optimal hormone levels with personalized, lab-guided BioTE pellet therapy for men and women.",
     heroStat: { value: "3-5 months", label: "Typical pellet duration" },
@@ -191,9 +191,9 @@ export const services: Service[] = [
     icon: "sparkles",
     category: "Aesthetics",
     image:
-      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1200&q=80",
     imageAlt:
-      "Calm wellness spa setting representing aesthetic treatments",
+      "Woman receiving a calm, professional facial treatment in a serene spa setting",
     summary:
       "Laser hair restoration and aesthetic treatments designed to help you look as good as you feel.",
     heroStat: { value: "In-office", label: "Laser treatments" },
@@ -262,7 +262,7 @@ export const services: Service[] = [
     image:
       "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80",
     imageAlt:
-      "Person stretching outdoors at sunrise, representing resilience and healthy aging",
+      "Adults in a bright yoga and mobility class, representing resilience and healthy aging",
     summary:
       "Therapies focused on supporting the body's natural repair processes — designed to help you feel resilient, recover faster, and age on your terms.",
     heroStat: { value: "Root-cause", label: "Integrative approach" },
@@ -330,7 +330,7 @@ export const services: Service[] = [
     image:
       "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&q=80",
     imageAlt:
-      "Supportive consultation setting representing compassionate, physician-led recovery care",
+      "Anatomical model of the human brain, representing the clinical, whole-person approach to physician-led recovery care",
     summary:
       "Compassionate, physician-led addiction treatment focused on long-term recovery, not just short-term symptom control.",
     heroStat: { value: "Confidential", label: "Physician-led care" },

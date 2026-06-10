@@ -64,7 +64,7 @@ export function Reveal({
 export function Stagger({
   children,
   className,
-  stagger = 0.1,
+  stagger = 0.09,
   once = true,
   ...rest
 }: HTMLMotionProps<"div"> & { stagger?: number; once?: boolean }) {
@@ -115,7 +115,7 @@ export function StaggerItem({
 
   const item: Variants = {
     hidden: { opacity: 0, y },
-    show: { opacity: 1, y: 0, transition: { duration: 0.55, ease: EASE } },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
   };
 
   return (
@@ -145,7 +145,7 @@ export function HoverLift({
     <motion.div
       className={className}
       whileHover={{ y: -6 }}
-      transition={{ type: "spring", stiffness: 300, damping: 24 }}
+      transition={{ duration: 0.3, ease: EASE }}
       {...rest}
     >
       {children}

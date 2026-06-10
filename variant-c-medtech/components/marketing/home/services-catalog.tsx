@@ -106,7 +106,7 @@ export function ServicesCatalog() {
                     <p className="flex-1 text-sm leading-relaxed text-muted-foreground">
                       {service.summary}
                     </p>
-                    <span className="mt-1 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors group-hover:text-accent">
+                    <span className="mt-1 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors group-hover:text-[color-mix(in_oklch,var(--accent),black_42%)]">
                       Learn more
                       <ArrowRight
                         className="size-4 transition-transform group-hover:translate-x-1"

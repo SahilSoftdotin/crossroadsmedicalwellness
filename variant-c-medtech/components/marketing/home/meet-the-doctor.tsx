@@ -51,7 +51,7 @@ export function MeetTheDoctor() {
                 initial={reduce ? false : { opacity: 0, y: 18 }}
                 whileInView={reduce ? {} : { opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.15 + i * 0.1 }}
                 className="flex flex-col items-center gap-1 rounded-2xl border border-white/60 bg-background/85 px-3 py-4 text-center shadow-card backdrop-blur-xl"
               >
                 <c.icon className="size-5 text-accent" aria-hidden="true" />

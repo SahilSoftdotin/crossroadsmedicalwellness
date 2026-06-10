@@ -29,8 +29,8 @@ export function FeaturedServices() {
             return (
               <StaggerItem key={service.slug}>
                 <motion.div
-                  whileHover={reduce ? undefined : { y: -8 }}
-                  transition={{ type: "spring", stiffness: 280, damping: 24 }}
+                  whileHover={reduce ? undefined : { y: -6 }}
+                  transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   className="group h-full"
                 >
                   <Link
@@ -60,7 +60,7 @@ export function FeaturedServices() {
                       <p className="flex-1 text-sm leading-relaxed text-muted-foreground">
                         {service.summary}
                       </p>
-                      <span className="mt-1 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors group-hover:text-accent">
+                      <span className="mt-1 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors group-hover:text-[color-mix(in_oklch,var(--accent),black_42%)]">
                         Learn more
                         <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                       </span>

@@ -13,7 +13,7 @@ import {
 const photos = [
   {
     src: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80",
-    alt: "Woman stretching outdoors at sunrise, feeling energized",
+    alt: "Adults in a bright yoga and mobility class, feeling energized",
     className: "col-span-2 row-span-2",
   },
   {
@@ -32,13 +32,13 @@ const photos = [
     className: "col-span-1 row-span-2",
   },
   {
-    src: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=700&q=80",
-    alt: "Man hiking on a mountain trail",
+    src: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=700&q=80",
+    alt: "Hikers on a mountain trail with snow-capped peaks",
     className: "col-span-1 row-span-1",
   },
   {
-    src: "https://images.unsplash.com/photo-1540206395-68808572332f?auto=format&fit=crop&w=700&q=80",
-    alt: "Couple cycling together outdoors",
+    src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=700&q=80",
+    alt: "A person standing on a sunlit mountain ridge above rolling hills",
     className: "col-span-2 row-span-1",
   },
 ];
@@ -67,7 +67,7 @@ export function Gallery() {
             <StaggerItem key={p.src} className={p.className}>
               <motion.div
                 whileHover={reduce ? undefined : { scale: 1.015 }}
-                transition={{ type: "spring", stiffness: 260, damping: 22 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 className="group relative h-full w-full overflow-hidden rounded-3xl shadow-card ring-1 ring-border"
               >
                 <Image
