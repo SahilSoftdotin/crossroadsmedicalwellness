@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/marketing/site-header";
 import { SiteFooter } from "@/components/marketing/site-footer";
 import { Toaster } from "@/components/ui/sonner";
+import { ChatbotWidget } from "@/components/marketing/chatbot/chatbot-widget";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -67,6 +68,7 @@ export default function RootLayout({
         </main>
         <SiteFooter />
         <Toaster />
+        <ChatbotWidget />
       </body>
     </html>
   );

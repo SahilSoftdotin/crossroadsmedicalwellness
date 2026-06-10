@@ -7,6 +7,7 @@ import {
   SmoothAnchors,
 } from "@/components/motion/scroll-ui";
 import { CursorSpotlight } from "@/components/motion/cursor-spotlight";
+import { ChatWidget } from "@/components/chatbot/chat-widget";
 
 export default function MarketingLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -18,6 +19,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
       <main className="flex-1">{children}</main>
       <SiteFooter />
       <ScrollToTop />
+      <ChatWidget />
     </SmoothScrollProvider>
   );
 }

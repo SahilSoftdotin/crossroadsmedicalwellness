@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/marketing/navbar";
 import { Footer } from "@/components/marketing/footer";
+import { ChatWidget } from "@/components/chatbot/chat-widget";
 
 export default function MarketingLayout({
   children,
@@ -19,6 +20,7 @@ export default function MarketingLayout({
         {children}
       </main>
       <Footer />
+      <ChatWidget />
     </div>
   );
 }

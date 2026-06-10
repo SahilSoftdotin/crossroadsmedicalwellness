@@ -73,7 +73,7 @@ export function ScrollToTop() {
           type="button"
           aria-label="Scroll back to top"
           onClick={() => smoothScrollTo(0, !!reduce)}
-          className="fixed bottom-6 right-6 z-[60] flex size-12 items-center justify-center rounded-full border border-white/60 bg-background/80 text-primary shadow-elevated backdrop-blur-xl transition-colors hover:bg-background focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
+          className="fixed right-4 bottom-[5.5rem] z-[60] flex size-12 items-center justify-center rounded-full border border-white/60 bg-background/80 text-primary shadow-elevated backdrop-blur-xl transition-colors hover:bg-background focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 sm:right-6 sm:bottom-24"
           initial={reduce ? { opacity: 1 } : { opacity: 0, y: 16, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={reduce ? { opacity: 0 } : { opacity: 0, y: 16, scale: 0.9 }}
