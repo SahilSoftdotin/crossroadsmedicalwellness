@@ -38,3 +38,17 @@ npm run build          # production build
 
 This is a **prototype**. Production hardening (real auth, database, HIPAA/PHI handling,
 payments, lab integrations, e-prescribing, CMS) is a separate later phase.
+
+## Deployment & CI
+
+Repo: https://github.com/SahilSoftdotin/crossroadsmedicalwellness
+
+Each variant is its own Vercel project, connected to this repo with its **Root Directory**
+set to the variant folder. Pushes to `main` trigger an automatic production deployment of
+each project.
+
+| Variant | Vercel project | Root Directory |
+|---|---|---|
+| A · Premium | `variant-a-premium` | `variant-a-premium` |
+| B · Warm | `variant-b-warm` | `variant-b-warm` |
+| C · Med-Tech | `variant-c-medtech` | `variant-c-medtech` |
