@@ -3,6 +3,13 @@ export type ServiceFaq = {
   answer: string;
 };
 
+export type ServiceCategory =
+  | "Hormone & Metabolic"
+  | "Weight"
+  | "Aesthetics"
+  | "Longevity"
+  | "Behavioral";
+
 export type Service = {
   slug: string;
   name: string;
@@ -13,6 +20,10 @@ export type Service = {
     | "sparkles"
     | "refresh-cw"
     | "life-buoy";
+  category: ServiceCategory;
+  featured?: boolean;
+  image: string;
+  imageAlt: string;
   summary: string;
   heroStat: { value: string; label: string };
   whatItIs: string;
@@ -28,6 +39,12 @@ export const services: Service[] = [
     name: "Bioidentical Hormone Therapy (BioTE)",
     shortName: "Hormone Therapy",
     icon: "activity",
+    category: "Hormone & Metabolic",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=80",
+    imageAlt:
+      "Active man hiking outdoors, representing restored energy from hormone optimization",
     summary:
       "Restore optimal hormone levels with personalized, lab-guided BioTE pellet therapy for men and women.",
     heroStat: { value: "3-5 months", label: "Typical pellet duration" },
@@ -97,6 +114,12 @@ export const services: Service[] = [
     name: "Medical Weight Loss",
     shortName: "Weight Loss",
     icon: "scale",
+    category: "Weight",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=80",
+    imageAlt:
+      "Fresh, colorful nutritious meal supporting a physician-guided weight loss plan",
     summary:
       "Physician-supervised weight loss using GLP-1 medications like semaglutide and tirzepatide, paired with lab monitoring and lifestyle coaching.",
     heroStat: { value: "Physician-led", label: "GLP-1 protocols" },
@@ -166,6 +189,11 @@ export const services: Service[] = [
     name: "Aesthetics",
     shortName: "Aesthetics",
     icon: "sparkles",
+    category: "Aesthetics",
+    image:
+      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1200&q=80",
+    imageAlt:
+      "Calm wellness spa setting representing aesthetic treatments",
     summary:
       "Laser hair restoration and aesthetic treatments designed to help you look as good as you feel.",
     heroStat: { value: "In-office", label: "Laser treatments" },
@@ -229,6 +257,12 @@ export const services: Service[] = [
     name: "Regenerative & Anti-Aging Therapies",
     shortName: "Regenerative Medicine",
     icon: "refresh-cw",
+    category: "Longevity",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80",
+    imageAlt:
+      "Person stretching outdoors at sunrise, representing resilience and healthy aging",
     summary:
       "Therapies focused on supporting the body's natural repair processes — designed to help you feel resilient, recover faster, and age on your terms.",
     heroStat: { value: "Root-cause", label: "Integrative approach" },
@@ -292,6 +326,11 @@ export const services: Service[] = [
     name: "Addiction Therapy",
     shortName: "Addiction Therapy",
     icon: "life-buoy",
+    category: "Behavioral",
+    image:
+      "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&q=80",
+    imageAlt:
+      "Supportive consultation setting representing compassionate, physician-led recovery care",
     summary:
       "Compassionate, physician-led addiction treatment focused on long-term recovery, not just short-term symptom control.",
     heroStat: { value: "Confidential", label: "Physician-led care" },
@@ -355,3 +394,39 @@ export const services: Service[] = [
 export function getServiceBySlug(slug: string): Service | undefined {
   return services.find((service) => service.slug === slug);
 }
+
+export const featuredServices = services.filter((s) => s.featured);
+
+export const serviceCategoryOrder: ServiceCategory[] = [
+  "Hormone & Metabolic",
+  "Weight",
+  "Aesthetics",
+  "Longevity",
+  "Behavioral",
+];
+
+export const serviceCategoryMeta: Record<
+  ServiceCategory,
+  { label: string; blurb: string }
+> = {
+  "Hormone & Metabolic": {
+    label: "Hormone & Metabolic",
+    blurb: "Restore balance and energy with lab-guided hormone optimization.",
+  },
+  Weight: {
+    label: "Weight",
+    blurb: "Physician-supervised, sustainable weight management.",
+  },
+  Aesthetics: {
+    label: "Aesthetics",
+    blurb: "Look as good as you feel, coordinated with your wellness plan.",
+  },
+  Longevity: {
+    label: "Longevity",
+    blurb: "Whole-body, root-cause care for long-term healthspan.",
+  },
+  Behavioral: {
+    label: "Behavioral",
+    blurb: "Compassionate, confidential, physician-led recovery support.",
+  },
+};

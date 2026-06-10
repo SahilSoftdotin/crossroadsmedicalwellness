@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Activity, ArrowRight, Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -20,10 +20,25 @@ const navLinks = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/85 backdrop-blur-md">
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b transition-all duration-300",
+        scrolled || open
+          ? "border-border/80 bg-background/85 backdrop-blur-xl shadow-[0_4px_30px_-12px_rgb(13_31_60_/_0.18)]"
+          : "border-transparent bg-background/40 backdrop-blur-md"
+      )}
+    >
       <div className="container-page flex h-16 items-center justify-between gap-4">
         <Link
           href="/"
