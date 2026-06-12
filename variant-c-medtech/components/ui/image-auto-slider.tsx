@@ -4,7 +4,7 @@ import * as React from "react";
 
 /**
  * Infinite, edge-masked auto-scrolling image strip.
- * Adapted from a 21st.dev component to fit this project's theme:
+ * Theme-fitted to this project:
  * - no global body styles, no full-screen black wrapper
  * - scoped animation class names (ias-*)
  * - pauses on hover, and stops entirely for prefers-reduced-motion
