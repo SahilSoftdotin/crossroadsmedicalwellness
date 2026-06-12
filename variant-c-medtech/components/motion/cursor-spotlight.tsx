@@ -1,22 +1,29 @@
 "use client";
 
 import { useEffect } from "react";
-import { motion, useMotionValue, useSpring, useMotionTemplate, useReducedMotion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "framer-motion";
 import { usePointerFine } from "@/components/motion/use-pointer-fine";
 
+const SIZE = 560;
+
 /**
- * A subtle global radial glow that follows the pointer. Desktop + fine-pointer
- * only, aria-hidden, pointer-events-none, and disabled under reduced motion.
- * Low opacity accent so it reads as ambient depth, not a distraction.
+ * A subtle ambient glow that follows the pointer. Desktop + fine-pointer only,
+ * aria-hidden, pointer-events-none, disabled under reduced motion.
+ *
+ * Performance: moves a fixed-size element via transform (translate) — which is
+ * GPU-composited — instead of animating a full-screen `background`, which would
+ * repaint the whole viewport on every pointer move and stutter scrolling.
  */
 export function CursorSpotlight() {
   const reduce = useReducedMotion();
   const pointerFine = usePointerFine();
 
-  const x = useMotionValue(-1000);
-  const y = useMotionValue(-1000);
-  const sx = useSpring(x, { stiffness: 120, damping: 24, mass: 0.5 });
-  const sy = useSpring(y, { stiffness: 120, damping: 24, mass: 0.5 });
+  const x = useMotionValue(-9999);
+  const y = useMotionValue(-9999);
+  const sx = useSpring(x, { stiffness: 140, damping: 26, mass: 0.4 });
+  const sy = useSpring(y, { stiffness: 140, damping: 26, mass: 0.4 });
+  const tx = useTransform(sx, (v) => v - SIZE / 2);
+  const ty = useTransform(sy, (v) => v - SIZE / 2);
 
   const enabled = pointerFine && !reduce;
 
@@ -30,15 +37,21 @@ export function CursorSpotlight() {
     return () => window.removeEventListener("pointermove", onMove);
   }, [enabled, x, y]);
 
-  const background = useMotionTemplate`radial-gradient(420px circle at ${sx}px ${sy}px, color-mix(in oklch, var(--accent), transparent 88%), transparent 70%)`;
-
   if (!enabled) return null;
 
   return (
     <motion.div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 z-[5]"
-      style={{ background }}
+      className="pointer-events-none fixed left-0 top-0 z-[5] rounded-full"
+      style={{
+        x: tx,
+        y: ty,
+        width: SIZE,
+        height: SIZE,
+        background:
+          "radial-gradient(circle, color-mix(in oklch, var(--accent), transparent 86%), transparent 70%)",
+        willChange: "transform",
+      }}
     />
   );
 }

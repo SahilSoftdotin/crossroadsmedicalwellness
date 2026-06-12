@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/marketing/section-heading";
 import { getIcon } from "@/components/marketing/icon-map";
 import { Reveal, Stagger, StaggerItem, motion, useReducedMotion } from "@/components/motion/motion-primitives";
-import { TiltCard } from "@/components/motion/tilt-card";
 import { featuredServices } from "@/lib/data/services";
 
 export function FeaturedServices() {
@@ -34,7 +33,6 @@ export function FeaturedServices() {
                   transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   className="group h-full"
                 >
-                  <TiltCard className="h-full rounded-[28px]">
                   <Link
                     href={`/services/${service.slug}`}
                     className="flex h-full flex-col overflow-hidden rounded-[28px] bg-card shadow-card ring-1 ring-border transition-shadow duration-300 hover:shadow-elevated focus-visible:outline-none"
@@ -48,10 +46,10 @@ export function FeaturedServices() {
                         className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-primary/5 to-transparent" />
-                      <span className="absolute left-5 top-5 flex size-11 items-center justify-center rounded-2xl bg-background/85 text-primary shadow-card backdrop-blur-md">
+                      <span className="absolute left-5 top-5 flex size-11 items-center justify-center rounded-2xl bg-background/95 text-primary shadow-card">
                         <Icon className="size-5" aria-hidden="true" />
                       </span>
-                      <span className="absolute bottom-4 left-5 rounded-full bg-background/85 px-3 py-1 text-xs font-semibold text-primary backdrop-blur-md">
+                      <span className="absolute bottom-4 left-5 rounded-full bg-background/95 px-3 py-1 text-xs font-semibold text-primary">
                         {service.heroStat.value} · {service.heroStat.label}
                       </span>
                     </div>
@@ -68,7 +66,6 @@ export function FeaturedServices() {
                       </span>
                     </div>
                   </Link>
-                  </TiltCard>
                 </motion.div>
               </StaggerItem>
             );

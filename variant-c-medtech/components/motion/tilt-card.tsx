@@ -1,14 +1,7 @@
 "use client";
 
 import * as React from "react";
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  useTransform,
-  useMotionTemplate,
-  useReducedMotion,
-} from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "framer-motion";
 import { usePointerFine } from "@/components/motion/use-pointer-fine";
 
 type TiltCardProps = {
@@ -16,19 +9,17 @@ type TiltCardProps = {
   className?: string;
   /** Maximum rotation in degrees on each axis. */
   max?: number;
-  /** Show a subtle moving glare highlight. */
-  glare?: boolean;
 };
 
 /**
  * 3D tilt-on-hover wrapper. On pointer move the card rotates slightly toward the
- * cursor with perspective, plus an optional soft glare that tracks the pointer.
+ * cursor. Only transform (rotateX/rotateY) is animated, which is GPU-composited
+ * and cheap — no per-frame background/glare repaint.
  *
- * Disabled on touch and under reduced motion — in those cases it renders a plain
- * <div> with no transforms or handlers, so keyboard/touch users get the normal
- * card and focus/hover styles defined by the child are untouched.
+ * Disabled on touch and under reduced motion — renders a plain <div> with no
+ * transforms or handlers in those cases.
  */
-export function TiltCard({ children, className, max = 7, glare = true }: TiltCardProps) {
+export function TiltCard({ children, className, max = 6 }: TiltCardProps) {
   const reduce = useReducedMotion();
   const pointerFine = usePointerFine();
   const ref = React.useRef<HTMLDivElement>(null);
@@ -38,16 +29,12 @@ export function TiltCard({ children, className, max = 7, glare = true }: TiltCar
 
   const rotateX = useSpring(useTransform(py, [0, 1], [max, -max]), {
     stiffness: 200,
-    damping: 20,
+    damping: 22,
   });
   const rotateY = useSpring(useTransform(px, [0, 1], [-max, max]), {
     stiffness: 200,
-    damping: 20,
+    damping: 22,
   });
-
-  const glareX = useTransform(px, [0, 1], ["0%", "100%"]);
-  const glareY = useTransform(py, [0, 1], ["0%", "100%"]);
-  const glareBg = useMotionTemplate`radial-gradient(circle at ${glareX} ${glareY}, rgb(255 255 255 / 0.28), transparent 55%)`;
 
   const enabled = pointerFine && !reduce;
 
@@ -77,18 +64,10 @@ export function TiltCard({ children, className, max = 7, glare = true }: TiltCar
         rotateX,
         rotateY,
         transformPerspective: 900,
-        transformStyle: "preserve-3d",
-        position: "relative",
+        willChange: "transform",
       }}
     >
       {children}
-      {glare && (
-        <motion.span
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 z-10 rounded-[inherit] mix-blend-soft-light"
-          style={{ background: glareBg }}
-        />
-      )}
     </motion.div>
   );
 }
