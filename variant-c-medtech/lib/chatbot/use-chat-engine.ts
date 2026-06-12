@@ -29,7 +29,7 @@ const GREETING_QUICK_REPLIES: QuickReply[] = [
 ];
 
 const GREETING_TEXT =
-  `Hi! I'm the Crossroads Medical Wellness assistant. I can answer quick questions about our services, hours, and location, or help you start a consultation request. What can I help with?`;
+  `Hi! I'm the THRIVE Longevity Center assistant. I can answer quick questions about our services, hours, and location, or help you start a consultation request. What can I help with?`;
 
 function botMessage(text: string, quickReplies?: QuickReply[]): ChatMessage {
   return { id: nextId(), role: "bot", text, quickReplies, announce: true };

@@ -3,8 +3,9 @@ import { Activity, Mail, MapPin, Phone, MessageSquare } from "lucide-react";
 import { clinic } from "@/lib/data/clinic";
 
 const explore = [
+  { href: "/pricing", label: "Programs & Pricing" },
   { href: "/services", label: "Services" },
-  { href: "/programs", label: "Programs" },
+  { href: "/programs", label: "Treatment Programs" },
   { href: "/about", label: "About Dr. Adams" },
   { href: "/research", label: "Research & Articles" },
   { href: "/reviews", label: "Patient Reviews" },
@@ -27,7 +28,7 @@ export function SiteFooter() {
               <span className="flex size-9 items-center justify-center rounded-xl bg-accent text-accent-foreground">
                 <Activity className="size-5" aria-hidden="true" />
               </span>
-              Crossroads Medical Wellness
+              THRIVE Longevity Center
             </Link>
             <p className="mt-4 max-w-sm text-sm text-primary-foreground/75">
               {clinic.positioning}
@@ -112,7 +113,7 @@ export function SiteFooter() {
 
         <div className="mt-12 flex flex-col gap-4 border-t border-primary-foreground/10 pt-6 text-xs text-primary-foreground/60 sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © {new Date().getFullYear()} Crossroads Medical Wellness. All rights reserved. Hours and
+            © {new Date().getFullYear()} THRIVE Longevity Center. All rights reserved. Hours and
             availability are illustrative — please call or text to confirm.
           </p>
           <p>

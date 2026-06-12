@@ -73,16 +73,16 @@ export function Hero() {
         >
           <Badge className="mb-6 bg-accent-soft text-primary">
             <ShieldCheck data-icon="inline-start" className="size-3.5" />
-            Physician-owned · Athens, AL
+            Physician-led longevity · Athens, AL
           </Badge>
           <h1 className="text-balance font-display text-4xl font-semibold leading-[1.05] tracking-tight text-primary sm:text-5xl lg:text-[4.1rem]">
-            Complete integrative care,{" "}
-            <span className="text-shimmer">under one roof</span>.
+            Know your biological age.{" "}
+            <span className="text-shimmer">Optimize your healthspan</span>.
           </h1>
           <p className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-muted-foreground">
-            Crossroads Medical Wellness pairs Dr. Gary Adams&rsquo; 30+ years of clinical
-            experience with lab-driven, root-cause care — hormone optimization, medical
-            weight loss, regenerative therapies and more, with one care team and no referrals.
+            THRIVE Longevity Center pairs Dr. Gary Adams&rsquo; 30+ years of clinical
+            experience with advanced diagnostics, biological-age scoring, and personalized
+            optimization — every lab, scan, and longevity insight under one roof.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <MagneticButton>
@@ -100,7 +100,7 @@ export function Hero() {
             </MagneticButton>
           </div>
           <ul className="mt-9 flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:flex-wrap sm:gap-x-6 sm:gap-y-2">
-            {["Lab-guided protocols", "BioTE certified", "GLP-1 medical weight loss"].map((item) => (
+            {["Sentinel Longevity Score", "Advanced diagnostics", "Personalized optimization"].map((item) => (
               <li key={item} className="flex items-center gap-2">
                 <CheckCircle2 className="size-4 text-accent" aria-hidden="true" />
                 {item}

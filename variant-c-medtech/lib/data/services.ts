@@ -335,7 +335,7 @@ export const services: Service[] = [
       "Compassionate, physician-led addiction treatment focused on long-term recovery, not just short-term symptom control.",
     heroStat: { value: "Confidential", label: "Physician-led care" },
     whatItIs:
-      "Crossroads Medical Wellness offers specialized addiction therapy services rooted in the same integrative philosophy that guides our other care lines — treating the whole person, not just the addiction. Dr. Adams works with patients to develop individualized treatment plans that may include medical support, monitoring, and coordination with counseling resources.",
+      "THRIVE Longevity Center offers specialized addiction therapy services rooted in the same integrative philosophy that guides our other care lines — treating the whole person, not just the addiction. Dr. Adams works with patients to develop individualized treatment plans that may include medical support, monitoring, and coordination with counseling resources.",
     whoItsFor: [
       "Adults seeking medical support for substance use concerns",
       "Patients looking for a private, physician-led starting point for recovery",
@@ -375,7 +375,7 @@ export const services: Service[] = [
       {
         question: "Is this confidential?",
         answer:
-          "Yes. All consultations are private and handled with the same confidentiality as any other medical visit at Crossroads Medical Wellness.",
+          "Yes. All consultations are private and handled with the same confidentiality as any other medical visit at THRIVE Longevity Center.",
       },
       {
         question: "Do you provide counseling directly?",

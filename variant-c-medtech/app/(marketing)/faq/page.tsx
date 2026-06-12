@@ -7,7 +7,7 @@ import { faqCategories } from "@/lib/data/faqs";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Answers to common questions about Crossroads Medical Wellness services, billing, the patient portal, and getting started.",
+    "Answers to common questions about THRIVE Longevity Center services, billing, the patient portal, and getting started.",
 };
 
 export default function FaqPage() {

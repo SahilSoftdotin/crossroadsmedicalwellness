@@ -7,7 +7,7 @@ import { programs } from "@/lib/data/programs";
 export const metadata: Metadata = {
   title: "Programs",
   description:
-    "Themed care programs from Crossroads Medical Wellness: Men's Hormone Health, Women's Health, Medical Weight Loss, and Longevity & Anti-Aging.",
+    "Themed care programs from THRIVE Longevity Center: Men's Hormone Health, Women's Health, Medical Weight Loss, and Longevity & Anti-Aging.",
 };
 
 export default function ProgramsPage() {

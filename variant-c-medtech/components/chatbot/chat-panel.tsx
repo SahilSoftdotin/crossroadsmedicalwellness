@@ -106,7 +106,7 @@ export function ChatPanel({ titleId, onClose }: ChatPanelProps) {
       ref={panelRef}
       role="dialog"
       aria-modal="true"
-      aria-label="Crossroads Medical Wellness chat assistant"
+      aria-label="THRIVE Longevity Center chat assistant"
       aria-labelledby={titleId}
       className="flex h-full max-h-full w-full flex-col overflow-hidden"
     >
@@ -114,7 +114,7 @@ export function ChatPanel({ titleId, onClose }: ChatPanelProps) {
       <div className="flex shrink-0 items-center justify-between gap-3 border-b border-border bg-primary px-4 py-3 text-primary-foreground">
         <div className="min-w-0">
           <h2 id={titleId} className="truncate font-display text-base font-semibold">
-            Crossroads Assistant
+            THRIVE Assistant
           </h2>
           <p className="truncate text-xs text-primary-foreground/70">
             Ask about services, hours, or book a consultation

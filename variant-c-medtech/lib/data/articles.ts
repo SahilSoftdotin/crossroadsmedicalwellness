@@ -18,10 +18,10 @@ export const articles: Article[] = [
     category: "Hormone Health",
     readTime: "6 min read",
     publishedAt: "2026-04-02",
-    author: "Crossroads Medical Wellness Team",
+    author: "THRIVE Longevity Center Team",
     content: [
       "When patients see their lab results for the first time, the page full of abbreviations and reference ranges can feel overwhelming. Total testosterone, free testosterone, estradiol, SHBG, TSH — each plays a role, but no single number tells the whole story.",
-      "At Crossroads Medical Wellness, Dr. Adams looks at your hormone panel as a picture, not a checklist. A value that falls within the 'normal' range on a lab report isn't always optimal for your symptoms, age, and goals. That's why your consultation includes a conversation about how you feel, not just where your numbers land on a chart.",
+      "At THRIVE Longevity Center, Dr. Adams looks at your hormone panel as a picture, not a checklist. A value that falls within the 'normal' range on a lab report isn't always optimal for your symptoms, age, and goals. That's why your consultation includes a conversation about how you feel, not just where your numbers land on a chart.",
       "Total testosterone measures the overall amount of testosterone in your blood, while free testosterone reflects the portion that's actually available for your body to use — bound testosterone is largely inactive. SHBG (sex hormone-binding globulin) affects how much testosterone is 'free' versus bound, so it's an important piece of the puzzle.",
       "For women, estradiol and progesterone levels shift significantly during perimenopause, often well before periods become irregular. Tracking these alongside symptoms like sleep quality, mood, and hot flashes gives a much clearer picture than lab values in isolation.",
       "Thyroid markers (TSH, free T3, free T4) are also commonly reviewed, since thyroid function affects energy, metabolism, and mood — and can sometimes mimic or compound hormone-related symptoms.",
@@ -36,7 +36,7 @@ export const articles: Article[] = [
     category: "Weight Management",
     readTime: "7 min read",
     publishedAt: "2026-03-18",
-    author: "Crossroads Medical Wellness Team",
+    author: "THRIVE Longevity Center Team",
     content: [
       "GLP-1 (glucagon-like peptide-1) is a hormone your body naturally produces in response to eating. It plays a role in regulating blood sugar, slowing gastric emptying, and signaling fullness to your brain. Medications like semaglutide are designed to mimic this hormone, amplifying its effects.",
       "Tirzepatide goes a step further by also acting on a second receptor, GIP (glucose-dependent insulinotropic polypeptide), which some research suggests may enhance the effect on appetite regulation and metabolic markers for certain patients.",
@@ -54,7 +54,7 @@ export const articles: Article[] = [
     category: "Men's Health",
     readTime: "5 min read",
     publishedAt: "2026-02-10",
-    author: "Crossroads Medical Wellness Team",
+    author: "THRIVE Longevity Center Team",
     content: [
       "Testosterone naturally declines with age, but the rate and impact vary significantly from person to person. Many men attribute the effects to stress, work, or simply getting older — when a simple lab test could reveal a treatable hormone imbalance.",
       "1. Persistent fatigue. Not the kind of tired that a good night's sleep fixes, but a pervasive low energy that affects motivation and focus throughout the day.",
@@ -62,7 +62,7 @@ export const articles: Article[] = [
       "3. Low libido or changes in sexual function. This is one of the more commonly recognized signs, but many men wait years before mentioning it to a doctor.",
       "4. Mood changes — including increased irritability, low motivation, or a general sense of mental fog that wasn't there before.",
       "5. Sleep disruption, including difficulty falling asleep, staying asleep, or waking up feeling unrested even after a full night.",
-      "None of these signs alone confirms low testosterone — many things can cause fatigue or mood changes. But if several of these resonate and have persisted for months, a comprehensive hormone panel is a reasonable, low-risk next step. At Crossroads Medical Wellness, that panel is the starting point for every hormone consultation, so any treatment plan is based on your actual numbers, not guesswork.",
+      "None of these signs alone confirms low testosterone — many things can cause fatigue or mood changes. But if several of these resonate and have persisted for months, a comprehensive hormone panel is a reasonable, low-risk next step. At THRIVE Longevity Center, that panel is the starting point for every hormone consultation, so any treatment plan is based on your actual numbers, not guesswork.",
     ],
   },
   {
@@ -73,12 +73,12 @@ export const articles: Article[] = [
     category: "Women's Health",
     readTime: "6 min read",
     publishedAt: "2026-01-22",
-    author: "Crossroads Medical Wellness Team",
+    author: "THRIVE Longevity Center Team",
     content: [
       "Menopause is technically defined as 12 consecutive months without a menstrual period. Perimenopause is the transition leading up to that point — and it can last anywhere from a few years to over a decade.",
       "During perimenopause, hormone levels (especially estrogen and progesterone) fluctuate rather than steadily decline, which is part of why symptoms can feel unpredictable. Hot flashes, night sweats, mood swings, irregular periods, and sleep disruption are all common during this phase — even while periods are still occurring.",
       "Many women are told their symptoms are 'normal for their age' without further evaluation, or assume hormone support isn't relevant until periods stop entirely. In reality, lab testing during perimenopause can identify imbalances that, when addressed, may meaningfully improve quality of life well before menopause is reached.",
-      "At Crossroads Medical Wellness, our Women's Health program is designed to meet women wherever they are in this transition — whether symptoms are just beginning or fully established after menopause. A comprehensive panel, paired with a conversation about your specific symptoms, helps Dr. Adams design a plan that fits your stage of life.",
+      "At THRIVE Longevity Center, our Women's Health program is designed to meet women wherever they are in this transition — whether symptoms are just beginning or fully established after menopause. A comprehensive panel, paired with a conversation about your specific symptoms, helps Dr. Adams design a plan that fits your stage of life.",
       "If hot flashes, sleep issues, or mood changes are affecting your daily life — regardless of whether your periods have stopped — it's worth having that conversation sooner rather than later.",
     ],
   },
@@ -86,7 +86,7 @@ export const articles: Article[] = [
     slug: "what-is-functional-medicine",
     title: "What Does 'Integrative' or 'Functional' Medicine Actually Mean?",
     excerpt:
-      "These terms get used a lot, but what do they mean in practice? Here's how Dr. Adams applies an integrative, root-cause approach at Crossroads Medical Wellness.",
+      "These terms get used a lot, but what do they mean in practice? Here's how Dr. Adams applies an integrative, root-cause approach at THRIVE Longevity Center.",
     category: "Our Approach",
     readTime: "5 min read",
     publishedAt: "2025-12-15",
@@ -94,7 +94,7 @@ export const articles: Article[] = [
     content: [
       "Traditional medicine excels at diagnosing and treating acute conditions — infections, injuries, emergencies. Integrative or functional medicine takes a complementary approach, focused on understanding why a chronic symptom is happening in the first place, and addressing contributing factors together rather than in isolation.",
       "In practice, this often means looking beyond a single lab value or symptom. Fatigue, for example, could be related to thyroid function, hormone levels, sleep quality, nutrient status, or a combination of factors. An integrative evaluation considers these together rather than addressing each with a separate, disconnected prescription.",
-      "This doesn't mean rejecting conventional medicine — quite the opposite. At Crossroads, we use standard lab testing, evidence-based medications (including bioidentical hormones and GLP-1 therapies), and conventional diagnostic tools. The difference is in how we use that information: as pieces of a broader picture, with the goal of addressing root causes alongside symptom relief.",
+      "This doesn't mean rejecting conventional medicine — quite the opposite. At THRIVE, we use standard lab testing, evidence-based medications (including bioidentical hormones and GLP-1 therapies), and conventional diagnostic tools. The difference is in how we use that information: as pieces of a broader picture, with the goal of addressing root causes alongside symptom relief.",
       "With over 30 years of clinical experience, I've seen how often patients are told their labs are 'normal' while continuing to feel unwell. An integrative approach doesn't dismiss those lab results — it asks what else might be going on, and builds a plan around the whole person.",
     ],
   },
@@ -106,7 +106,7 @@ export const articles: Article[] = [
     category: "Practical Guides",
     readTime: "4 min read",
     publishedAt: "2025-11-30",
-    author: "Crossroads Medical Wellness Team",
+    author: "THRIVE Longevity Center Team",
     content: [
       "Health Savings Accounts (HSAs) and Flexible Spending Accounts (FSAs) allow you to set aside pre-tax dollars for qualified medical expenses — and many integrative wellness services may qualify, depending on your plan and how the service is billed.",
       "Because eligibility rules vary by plan administrator, the most reliable approach is to check directly with your HSA/FSA provider before your visit, and to ask our front desk team how a given service will be coded for your records.",

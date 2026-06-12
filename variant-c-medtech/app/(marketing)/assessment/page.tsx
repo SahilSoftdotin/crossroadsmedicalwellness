@@ -7,7 +7,7 @@ import { AssessmentWizard } from "@/components/marketing/assessment/assessment-w
 export const metadata: Metadata = {
   title: "Health Assessment",
   description:
-    "Take our short health assessment to help Dr. Adams understand your goals before your consultation at Crossroads Medical Wellness.",
+    "Take our short health assessment to help Dr. Adams understand your goals before your consultation at THRIVE Longevity Center.",
 };
 
 const reassurances = [

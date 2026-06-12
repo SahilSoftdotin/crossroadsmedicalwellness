@@ -44,7 +44,7 @@ export default function PortalLoginPage() {
           <span className="flex size-9 items-center justify-center rounded-xl bg-accent text-accent-foreground">
             <Activity className="size-5" aria-hidden="true" />
           </span>
-          Crossroads Medical Wellness
+          THRIVE Longevity Center
         </Link>
 
         <div className="relative max-w-md">
@@ -54,7 +54,7 @@ export default function PortalLoginPage() {
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-primary-foreground/75">
             Track your biomarker trends, stay on top of your protocol, message your care team, and
-            review upcoming visits with Dr. Adams and the Crossroads team.
+            review upcoming visits with Dr. Adams and the THRIVE team.
           </p>
           <ul className="mt-6 space-y-2 text-sm text-primary-foreground/80">
             {["Biomarker trends with optimal ranges", "Medication & supplement schedule", "Direct messaging with your care team"].map((item) => (
@@ -78,7 +78,7 @@ export default function PortalLoginPage() {
             <span className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
               <Activity className="size-5" aria-hidden="true" />
             </span>
-            Crossroads Medical Wellness
+            THRIVE Longevity Center
           </Link>
 
           <h2 className="font-display text-2xl font-semibold text-primary">Sign in to your portal</h2>
@@ -143,7 +143,7 @@ export default function PortalLoginPage() {
 
           <div className="mt-8 border-t border-border pt-6 text-center">
             <Link href="/" className="text-sm font-medium text-primary hover:underline">
-              Back to crossroadsmedicalwellness.com
+              Back to thrivelongevitycenter.com
             </Link>
           </div>
         </div>

@@ -174,7 +174,7 @@ const siteFactEntries: KnowledgeEntry[] = [
       "credentials",
       "experience",
     ],
-    answer: `${clinic.provider.name}, ${clinic.provider.credentials}, leads care at Crossroads Medical Wellness. ${clinic.provider.bio}`,
+    answer: `${clinic.provider.name}, ${clinic.provider.credentials}, leads care at THRIVE Longevity Center. ${clinic.provider.bio}`,
     link: { href: "/about", label: "About Dr. Adams" },
   },
   {

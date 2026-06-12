@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/marketing/home/hero";
 import { Metrics } from "@/components/marketing/home/metrics";
+import { ProgramsPricing } from "@/components/marketing/home/programs-pricing";
 import { FeaturedServices } from "@/components/marketing/home/featured-services";
 import { WhyChooseUs } from "@/components/marketing/home/why-choose-us";
 import { MeetTheDoctor } from "@/components/marketing/home/meet-the-doctor";
@@ -11,9 +12,9 @@ import { InsuranceFinancing } from "@/components/marketing/home/insurance-financ
 import { CtaSection } from "@/components/marketing/cta-section";
 
 export const metadata: Metadata = {
-  title: "Crossroads Medical Wellness | Integrative Care in Athens, AL",
+  title: "THRIVE Longevity Center | Physician-Led Longevity Medicine in Athens, AL",
   description:
-    "Complete integrative care under one roof with Dr. Gary Adams. Bioidentical hormone therapy, medical weight loss, regenerative medicine, aesthetics, and addiction therapy in Athens, AL.",
+    "Physician-led longevity medicine with Dr. Gary Adams. The Sentinel Longevity framework — advanced diagnostics, biological-age scoring, and personalized optimization, from Baseline assessment to Executive-level programs in Athens, AL.",
 };
 
 export default function HomePage() {
@@ -21,6 +22,7 @@ export default function HomePage() {
     <>
       <Hero />
       <Metrics />
+      <ProgramsPricing />
       <FeaturedServices />
       <WhyChooseUs />
       <MeetTheDoctor />

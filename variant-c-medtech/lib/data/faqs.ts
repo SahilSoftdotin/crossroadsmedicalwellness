@@ -100,7 +100,7 @@ export const faqCategories: FaqCategory[] = [
       {
         question: "What is the patient portal?",
         answer:
-          "The Crossroads patient portal is a private dashboard where established patients can view their lab trends, current treatment protocol, upcoming appointments, and messages from our care team.",
+          "The THRIVE patient portal is a private dashboard where established patients can view their lab trends, current treatment protocol, upcoming appointments, and messages from our care team.",
       },
       {
         question: "Is the portal demo on this website real?",

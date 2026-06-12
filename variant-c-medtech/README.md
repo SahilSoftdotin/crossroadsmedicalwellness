@@ -1,6 +1,6 @@
-# Crossroads Medical Wellness
+# THRIVE Longevity Center
 
-Marketing website and demo patient portal for **Crossroads Medical Wellness** —
+Marketing website and demo patient portal for **THRIVE Longevity Center** —
 a physician-owned integrative wellness clinic (Dr. Gary Adams, Athens, AL).
 
 ## Tech stack

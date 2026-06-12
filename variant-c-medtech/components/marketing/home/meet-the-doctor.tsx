@@ -92,7 +92,7 @@ export function MeetTheDoctor() {
             {clinic.provider.bio}
           </p>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            At Crossroads Medical Wellness, Dr. Adams personally guides every plan — reviewing your
+            At THRIVE Longevity Center, Dr. Adams personally guides every plan — reviewing your
             labs, listening to your goals, and building complete integrative care around you, all
             under one roof.
           </p>

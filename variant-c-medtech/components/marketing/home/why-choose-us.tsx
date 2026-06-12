@@ -65,9 +65,9 @@ export function WhyChooseUs() {
       <div className="container-page relative">
         <Reveal>
           <SectionHeading
-            eyebrow="Why Crossroads"
+            eyebrow="Why THRIVE"
             title="A premium standard of integrative care"
-            description="The reasons patients across Athens choose Crossroads Medical Wellness for complete, physician-led care."
+            description="The reasons patients across Athens choose THRIVE Longevity Center for complete, physician-led care."
             align="center"
             className="mx-auto"
           />

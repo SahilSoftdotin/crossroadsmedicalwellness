@@ -1,7 +1,7 @@
 "use client";
 
-const SESSION_KEY = "crossroads-portal-session";
-const SESSION_COOKIE = "crossroads_portal_session";
+const SESSION_KEY = "thrive-portal-session";
+const SESSION_COOKIE = "thrive_portal_session";
 
 export type PortalSession = {
   email: string;

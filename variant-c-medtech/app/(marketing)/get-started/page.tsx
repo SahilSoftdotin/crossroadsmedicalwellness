@@ -19,7 +19,7 @@ import { clinic } from "@/lib/data/clinic";
 export const metadata: Metadata = {
   title: "Get Started",
   description:
-    "Start your journey with Crossroads Medical Wellness — take our health assessment and our team will follow up to schedule your consultation with Dr. Adams.",
+    "Start your journey with THRIVE Longevity Center — take our health assessment and our team will follow up to schedule your consultation with Dr. Adams.",
 };
 
 const steps = [
@@ -59,7 +59,7 @@ export default function GetStartedPage() {
             Ready to get started? Here&rsquo;s how it works.
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-balance text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Every patient at Crossroads starts with a short health assessment. From there, our
+            Every patient at THRIVE starts with a short health assessment. From there, our
             team follows up to schedule a real consultation with Dr. Adams — no online
             scheduling, no automated prescriptions, just integrative care built around your
             numbers.

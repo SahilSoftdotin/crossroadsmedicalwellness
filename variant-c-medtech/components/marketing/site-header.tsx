@@ -10,8 +10,8 @@ import { clinic } from "@/lib/data/clinic";
 import { PageEntrance } from "@/components/motion/page-entrance";
 
 const navLinks = [
+  { href: "/pricing", label: "Programs & Pricing" },
   { href: "/services", label: "Services" },
-  { href: "/programs", label: "Programs" },
   { href: "/about", label: "About" },
   { href: "/research", label: "Research" },
   { href: "/reviews", label: "Reviews" },
@@ -43,16 +43,25 @@ export function SiteHeader() {
       <PageEntrance className="container-page flex h-16 items-center justify-between gap-4">
         <Link
           href="/"
+          aria-label="THRIVE Longevity Center — go to homepage"
           className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-primary"
-          onClick={() => setOpen(false)}
+          onClick={(e) => {
+            setOpen(false);
+            if (pathname === "/") {
+              e.preventDefault();
+              const lenis = (window as unknown as { __lenis?: { scrollTo: (t: number) => void } }).__lenis;
+              if (lenis) lenis.scrollTo(0);
+              else window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
         >
           <span className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
             <Activity className="size-5" aria-hidden="true" />
           </span>
           <span className="leading-tight">
-            Crossroads
+            THRIVE
             <span className="block text-xs font-medium tracking-[0.2em] text-muted-foreground uppercase">
-              Medical Wellness
+              Longevity Center
             </span>
           </span>
         </Link>

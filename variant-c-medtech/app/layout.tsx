@@ -15,15 +15,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://crossroadsmedicalwellness.example"),
+  metadataBase: new URL("https://thrivelongevitycenter.example"),
   title: {
-    default: "Crossroads Medical Wellness | Athens, AL",
-    template: "%s | Crossroads Medical Wellness",
+    default: "THRIVE Longevity Center | Athens, AL",
+    template: "%s | THRIVE Longevity Center",
   },
   description:
     "Physician-owned integrative care in Athens, AL. Bioidentical hormone therapy, medical weight loss, regenerative medicine, aesthetics, and addiction therapy under Dr. Gary Adams.",
   keywords: [
-    "Crossroads Medical Wellness",
+    "THRIVE Longevity Center",
     "Dr. Gary Adams",
     "Athens AL hormone therapy",
     "BioTE",
@@ -31,10 +31,10 @@ export const metadata: Metadata = {
     "functional medicine Alabama",
   ],
   openGraph: {
-    title: "Crossroads Medical Wellness",
+    title: "THRIVE Longevity Center",
     description:
       "Physician-owned integrative care blending traditional medicine with functional, root-cause approaches.",
-    siteName: "Crossroads Medical Wellness",
+    siteName: "THRIVE Longevity Center",
     locale: "en_US",
     type: "website",
   },

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: {
     default: "Patient Portal",
-    template: "%s | Patient Portal | Crossroads Medical Wellness",
+    template: "%s | Patient Portal | THRIVE Longevity Center",
   },
   robots: {
     index: false,

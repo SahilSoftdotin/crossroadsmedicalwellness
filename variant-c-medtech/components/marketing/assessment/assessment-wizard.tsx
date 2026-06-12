@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
@@ -16,12 +16,14 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { services } from "@/lib/data/services";
+import { sentinelTiers } from "@/lib/data/sentinel";
 
 type FormState = {
   goals: string[];
   ageRange: string;
   sex: string;
   healthNotes: string;
+  program: string;
   serviceInterest: string;
   name: string;
   email: string;
@@ -34,6 +36,7 @@ const initialState: FormState = {
   ageRange: "",
   sex: "",
   healthNotes: "",
+  program: "",
   serviceInterest: "",
   name: "",
   email: "",
@@ -67,6 +70,15 @@ export function AssessmentWizard() {
   const [touched, setTouched] = useState(false);
   const formId = useId();
 
+  // Carry a Sentinel program selected on the pricing page (?program=...).
+  useEffect(() => {
+    const p = new URLSearchParams(window.location.search).get("program");
+    if (p && sentinelTiers.some((t) => t.id === p)) {
+      setForm((prev) => ({ ...prev, program: p }));
+    }
+  }, []);
+
+  const selectedProgram = sentinelTiers.find((t) => t.id === form.program);
   const isLastStep = step === steps.length - 1;
 
   function update<K extends keyof FormState>(key: K, value: FormState[K]) {
@@ -89,7 +101,7 @@ export function AssessmentWizard() {
       case 1:
         return form.ageRange !== "" && form.sex !== "";
       case 2:
-        return form.serviceInterest !== "";
+        return form.program !== "" || form.serviceInterest !== "";
       case 3:
         return form.name.trim() !== "" && /\S+@\S+\.\S+/.test(form.email) && form.phone.trim().length >= 7;
       default:
@@ -124,6 +136,8 @@ export function AssessmentWizard() {
           phone: form.phone,
           preferredContact: form.preferredContact,
           goals: form.goals,
+          program: form.program,
+          programName: selectedProgram?.name ?? "",
           serviceInterest: form.serviceInterest,
           ageRange: form.ageRange,
           sex: form.sex,
@@ -163,6 +177,27 @@ export function AssessmentWizard() {
 
   return (
     <div className="rounded-3xl border border-border bg-card p-6 shadow-elevated sm:p-10">
+      {/* Selected Sentinel program (carried from the pricing page) */}
+      {selectedProgram && (
+        <div className="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-accent/40 bg-accent-soft/60 p-4">
+          <div>
+            <p className="text-xs font-semibold tracking-wide text-primary uppercase">
+              Your selected program
+            </p>
+            <p className="mt-0.5 font-display text-base font-semibold text-primary">
+              {selectedProgram.name} · {selectedProgram.priceDisplay}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => update("program", "")}
+            className="text-sm font-medium text-muted-foreground underline-offset-4 hover:text-primary hover:underline"
+          >
+            Change
+          </button>
+        </div>
+      )}
+
       {/* Progress */}
       <div className="mb-8">
         <div className="flex items-center justify-between text-xs font-semibold tracking-wide text-muted-foreground uppercase">
@@ -310,6 +345,13 @@ export function AssessmentWizard() {
           {step === 2 && (
             <fieldset>
               <legend className="sr-only">Service interest</legend>
+              {selectedProgram && (
+                <p className="mb-4 rounded-xl bg-secondary/60 p-3 text-sm text-muted-foreground">
+                  You selected the{" "}
+                  <span className="font-semibold text-primary">{selectedProgram.name}</span>. You can
+                  optionally add any other services you&rsquo;d like to discuss.
+                </p>
+              )}
               <div className="grid gap-3 sm:grid-cols-2">
                 {services.map((service) => (
                   <label
@@ -453,9 +495,16 @@ export function AssessmentWizard() {
                 <ReviewRow label="Age range">{form.ageRange}</ReviewRow>
                 <ReviewRow label="Sex">{form.sex}</ReviewRow>
                 {form.healthNotes && <ReviewRow label="Notes">{form.healthNotes}</ReviewRow>}
-                <ReviewRow label="Service interest">
-                  {services.find((s) => s.slug === form.serviceInterest)?.name ?? "Not sure yet"}
-                </ReviewRow>
+                {selectedProgram && (
+                  <ReviewRow label="Program">
+                    {selectedProgram.name} · {selectedProgram.priceDisplay}
+                  </ReviewRow>
+                )}
+                {form.serviceInterest && (
+                  <ReviewRow label="Service interest">
+                    {services.find((s) => s.slug === form.serviceInterest)?.name ?? "Not sure yet"}
+                  </ReviewRow>
+                )}
                 <ReviewRow label="Name">{form.name}</ReviewRow>
                 <ReviewRow label="Email">{form.email}</ReviewRow>
                 <ReviewRow label="Phone">{form.phone}</ReviewRow>
@@ -464,7 +513,7 @@ export function AssessmentWizard() {
                 </ReviewRow>
               </div>
               <p className="text-xs text-muted-foreground">
-                By submitting, you agree to be contacted by Crossroads Medical Wellness regarding your
+                By submitting, you agree to be contacted by THRIVE Longevity Center regarding your
                 assessment. This is a request for consultation, not a diagnosis or appointment
                 confirmation.
               </p>

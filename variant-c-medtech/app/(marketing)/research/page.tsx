@@ -11,7 +11,7 @@ import { formatDate } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Research & Education",
   description:
-    "Plain-language articles on hormone health, medical weight loss, and integrative medicine from the Crossroads Medical Wellness team.",
+    "Plain-language articles on hormone health, medical weight loss, and integrative medicine from the THRIVE Longevity Center team.",
 };
 
 export default function ResearchPage() {

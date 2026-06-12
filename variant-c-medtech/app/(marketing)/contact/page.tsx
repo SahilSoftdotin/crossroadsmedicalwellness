@@ -8,7 +8,7 @@ import { clinic } from "@/lib/data/clinic";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Contact Crossroads Medical Wellness in Athens, AL — call, text, or send a message and our team will follow up to schedule your visit.",
+    "Contact THRIVE Longevity Center in Athens, AL — call, text, or send a message and our team will follow up to schedule your visit.",
 };
 
 export default function ContactPage() {
@@ -92,7 +92,7 @@ export default function ContactPage() {
 
             <div className="overflow-hidden rounded-2xl border border-border">
               <iframe
-                title="Map showing Crossroads Medical Wellness location in Athens, AL"
+                title="Map showing THRIVE Longevity Center location in Athens, AL"
                 src={clinic.mapEmbedSrc}
                 className="h-64 w-full"
                 loading="lazy"

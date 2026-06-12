@@ -8,7 +8,7 @@ import { testimonials, aggregateRating } from "@/lib/data/testimonials";
 export const metadata: Metadata = {
   title: "Patient Reviews",
   description:
-    "Read what patients are saying about their experience with Dr. Gary Adams and the team at Crossroads Medical Wellness.",
+    "Read what patients are saying about their experience with Dr. Gary Adams and the team at THRIVE Longevity Center.",
 };
 
 export default function ReviewsPage() {

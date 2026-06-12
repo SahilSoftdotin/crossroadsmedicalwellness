@@ -11,7 +11,7 @@ import { clinic } from "@/lib/data/clinic";
 export const metadata: Metadata = {
   title: "About Dr. Gary Adams",
   description:
-    "Meet Dr. Gary Adams, MD, and learn about the integrative philosophy behind Crossroads Medical Wellness in Athens, AL.",
+    "Meet Dr. Gary Adams, MD, and learn about the integrative philosophy behind THRIVE Longevity Center in Athens, AL.",
 };
 
 const philosophyPoints = [
@@ -124,7 +124,7 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Our philosophy"
             title="Physician-owned integrative care, built on measurement"
-            description="Crossroads Medical Wellness was founded on a simple idea: combine the rigor of traditional medicine with a root-cause, whole-person approach — and let your data guide every decision."
+            description="THRIVE Longevity Center was founded on a simple idea: combine the rigor of traditional medicine with a root-cause, whole-person approach — and let your data guide every decision."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {philosophyPoints.map((point) => (
@@ -150,7 +150,7 @@ export default function AboutPage() {
             <p>
               After more than three decades practicing medicine, Dr. Gary Adams saw a recurring pattern:
               patients who were told their labs were &ldquo;normal&rdquo; while continuing to feel
-              fatigued, foggy, or simply not like themselves. Crossroads Medical Wellness was founded to
+              fatigued, foggy, or simply not like themselves. THRIVE Longevity Center was founded to
               close that gap — combining the diagnostic rigor of conventional medicine with an integrative,
               root-cause approach to how patients actually feel day to day.
             </p>

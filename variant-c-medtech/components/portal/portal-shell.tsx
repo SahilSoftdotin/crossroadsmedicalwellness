@@ -71,7 +71,7 @@ export function PortalShell({ children }: { children: ReactNode }) {
           <span className="flex size-8 items-center justify-center rounded-lg bg-accent text-accent-foreground">
             <Activity className="size-4" aria-hidden="true" />
           </span>
-          Crossroads
+          THRIVE
         </Link>
         <button
           type="button"
@@ -137,7 +137,7 @@ function SidebarContent({
             <Activity className="size-5" aria-hidden="true" />
           </span>
           <span className="leading-tight">
-            Crossroads
+            THRIVE
             <span className="block text-xs font-medium tracking-[0.2em] text-sidebar-foreground/60 uppercase">
               Patient Portal
             </span>
@@ -192,7 +192,7 @@ function SidebarContent({
           href="/"
           className="block text-center text-xs text-sidebar-foreground/50 hover:text-sidebar-foreground/80"
         >
-          Back to crossroadsmedicalwellness.com
+          Back to thrivelongevitycenter.com
         </Link>
       </div>
     </div>
