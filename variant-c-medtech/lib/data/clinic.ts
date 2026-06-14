@@ -27,8 +27,6 @@ export const clinic = {
   social: [
     { label: "Facebook", href: "https://facebook.com" },
     { label: "Instagram", href: "https://instagram.com" },
-    { label: "X", href: "https://x.com" },
-    { label: "TikTok", href: "https://tiktok.com" },
   ],
   mapEmbedSrc:
     "https://www.google.com/maps?q=1207+East+Forrest+St,+Athens,+AL&output=embed",

@@ -1,6 +1,10 @@
 # Brainstorm/visual-companion scratch
 .superpowers/
 
+# Internal project notes (local only — not for the public repo)
+PROJECT-NOTES.md
+SECURITY-NOTES.md
+
 # Dependencies & build output (per-variant .gitignore also covers these)
 node_modules/
 .next/

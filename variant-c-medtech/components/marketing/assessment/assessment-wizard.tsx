@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useId, useState } from "react";
 import {
   ArrowLeft,
@@ -24,6 +25,7 @@ type FormState = {
   sex: string;
   healthNotes: string;
   program: string;
+  company: string;
   serviceInterest: string;
   name: string;
   email: string;
@@ -37,6 +39,7 @@ const initialState: FormState = {
   sex: "",
   healthNotes: "",
   program: "",
+  company: "",
   serviceInterest: "",
   name: "",
   email: "",
@@ -138,6 +141,8 @@ export function AssessmentWizard() {
           goals: form.goals,
           program: form.program,
           programName: selectedProgram?.name ?? "",
+          company: form.company, // honeypot — must stay empty
+
           serviceInterest: form.serviceInterest,
           ageRange: form.ageRange,
           sex: form.sex,
@@ -177,6 +182,20 @@ export function AssessmentWizard() {
 
   return (
     <div className="rounded-3xl border border-border bg-card p-6 shadow-elevated sm:p-10">
+      {/* Honeypot — hidden from real users; bots that fill it are silently dropped. */}
+      <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden">
+        <label htmlFor="company-hp">Company (leave blank)</label>
+        <input
+          id="company-hp"
+          name="company"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={form.company}
+          onChange={(e) => update("company", e.target.value)}
+        />
+      </div>
+
       {/* Selected Sentinel program (carried from the pricing page) */}
       {selectedProgram && (
         <div className="mb-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-accent/40 bg-accent-soft/60 p-4">
@@ -188,13 +207,21 @@ export function AssessmentWizard() {
               {selectedProgram.name} · {selectedProgram.priceDisplay}
             </p>
           </div>
-          <button
-            type="button"
-            onClick={() => update("program", "")}
-            className="text-sm font-medium text-muted-foreground underline-offset-4 hover:text-primary hover:underline"
-          >
-            Change
-          </button>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <Link
+              href="/pricing"
+              className="text-sm font-semibold text-primary underline-offset-4 hover:underline"
+            >
+              Change program
+            </Link>
+            <button
+              type="button"
+              onClick={() => update("program", "")}
+              className="text-sm font-medium text-muted-foreground underline-offset-4 hover:text-primary hover:underline"
+            >
+              Not sure — remove &amp; continue
+            </button>
+          </div>
         </div>
       )}
 

@@ -87,7 +87,7 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-2 lg:flex">
           <Button variant="ghost" size="sm" asChild>
-            <Link href="/portal/login">Patient Portal</Link>
+            <Link href="/coming-soon">Patient Portal</Link>
           </Button>
           <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
             <Link href="/assessment">
@@ -123,7 +123,7 @@ export function SiteHeader() {
             ))}
             <div className="mt-2 flex flex-col gap-2 border-t border-border pt-4">
               <Button variant="outline" asChild>
-                <Link href="/portal/login" onClick={() => setOpen(false)}>
+                <Link href="/coming-soon" onClick={() => setOpen(false)}>
                   Patient Portal
                 </Link>
               </Button>

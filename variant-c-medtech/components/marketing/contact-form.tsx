@@ -32,6 +32,7 @@ export function ContactForm() {
         | "text"
         | "email",
       message: String(formData.get("message") ?? ""),
+      company: String(formData.get("company") ?? ""), // honeypot — must stay empty
     };
 
     try {
@@ -79,6 +80,12 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+      {/* Honeypot — hidden from real users; bots that fill it are silently dropped. */}
+      <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden">
+        <label htmlFor="company">Company (leave blank)</label>
+        <input id="company" name="company" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
       <div className="grid gap-5 sm:grid-cols-2">
         <div className="space-y-2">
           <Label htmlFor="name">Full name <span aria-hidden="true" className="text-destructive">*</span></Label>

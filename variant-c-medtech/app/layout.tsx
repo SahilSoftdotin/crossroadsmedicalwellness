@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s | THRIVE Longevity Center",
   },
   description:
-    "Physician-owned integrative care in Athens, AL. Bioidentical hormone therapy, medical weight loss, regenerative medicine, aesthetics, and addiction therapy under Dr. Gary Adams.",
+    "Physician-led longevity medicine in Athens, AL with Dr. Gary Adams — the Sentinel Longevity framework, advanced diagnostics, hormone optimization, medical weight loss, regenerative therapies, aesthetics, and sleep & brain health.",
   keywords: [
     "THRIVE Longevity Center",
     "Dr. Gary Adams",

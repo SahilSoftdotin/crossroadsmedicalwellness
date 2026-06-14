@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Star } from "lucide-react";
 import { SectionHeading } from "@/components/marketing/section-heading";
-import { TestimonialCard } from "@/components/marketing/testimonial-card";
+import { ReviewsWall } from "@/components/marketing/reviews-wall";
 import { CtaSection } from "@/components/marketing/cta-section";
-import { testimonials, aggregateRating } from "@/lib/data/testimonials";
+import { aggregateRating } from "@/lib/data/testimonials";
 
 export const metadata: Metadata = {
   title: "Patient Reviews",
@@ -38,10 +38,8 @@ export default function ReviewsPage() {
       </section>
 
       <section className="section-y">
-        <div className="container-page grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((testimonial) => (
-            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-          ))}
+        <div className="container-page">
+          <ReviewsWall />
         </div>
       </section>
 

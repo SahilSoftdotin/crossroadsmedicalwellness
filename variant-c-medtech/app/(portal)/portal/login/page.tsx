@@ -40,11 +40,11 @@ export default function PortalLoginPage() {
       {/* Branding side */}
       <div className="grid-pattern relative hidden flex-col justify-between overflow-hidden bg-primary p-10 text-primary-foreground lg:flex">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-[color-mix(in_oklch,var(--primary),var(--accent)_18%)]" />
-        <Link href="/" className="relative flex items-center gap-2 font-display text-lg font-semibold">
+        <Link href="/" className="relative flex items-center gap-2 font-display text-lg font-semibold uppercase tracking-tight">
           <span className="flex size-9 items-center justify-center rounded-xl bg-accent text-accent-foreground">
             <Activity className="size-5" aria-hidden="true" />
           </span>
-          THRIVE Longevity Center
+          THRIVE LONGEVITY CENTER
         </Link>
 
         <div className="relative max-w-md">
@@ -74,11 +74,11 @@ export default function PortalLoginPage() {
       {/* Form side */}
       <div className="flex flex-col justify-center px-6 py-12 sm:px-12 lg:px-16">
         <div className="mx-auto w-full max-w-sm">
-          <Link href="/" className="mb-8 flex items-center gap-2 font-display text-lg font-semibold text-primary lg:hidden">
+          <Link href="/" className="mb-8 flex items-center gap-2 font-display text-lg font-semibold uppercase tracking-tight text-primary lg:hidden">
             <span className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
               <Activity className="size-5" aria-hidden="true" />
             </span>
-            THRIVE Longevity Center
+            THRIVE LONGEVITY CENTER
           </Link>
 
           <h2 className="font-display text-2xl font-semibold text-primary">Sign in to your portal</h2>
