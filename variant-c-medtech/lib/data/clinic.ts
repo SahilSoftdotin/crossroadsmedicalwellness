@@ -16,8 +16,8 @@ export const clinic = {
   phoneHref: "tel:+12564349301",
   text: "(256) 608-4111",
   textHref: "sms:+12566084111",
-  email: "info@thrivelongevitycenter.com",
-  emailHref: "mailto:info@thrivelongevitycenter.com",
+  email: "info@thrivelongevitycenter.org",
+  emailHref: "mailto:info@thrivelongevitycenter.org",
   hours: [
     { days: "Monday – Thursday", time: "10:00 AM – 5:00 PM" },
     { days: "Friday", time: "9:00 AM – 3:00 PM" },

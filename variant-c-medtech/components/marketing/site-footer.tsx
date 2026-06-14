@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Activity, Mail, MapPin, Phone, MessageSquare } from "lucide-react";
+import Image from "next/image";
+import { Mail, MapPin, Phone, MessageSquare } from "lucide-react";
 import { clinic } from "@/lib/data/clinic";
 
 // Brand glyphs (lucide dropped most social marks). 24x24, fill="currentColor".
@@ -25,7 +26,7 @@ const getStarted = [
   { href: "/assessment", label: "Take the Health Assessment" },
   { href: "/contact", label: "Request an Appointment" },
   { href: "/faq", label: "FAQ" },
-  { href: "/coming-soon", label: "Patient Dashboard" },
+  { href: "https://www.gethealthie.com/", label: "Patient Portal" },
   { href: "/addiction-medicine", label: "Addiction Medicine (Crossroads)" },
 ];
 
@@ -35,11 +36,19 @@ export function SiteFooter() {
       <div className="container-page section-y !py-14">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
-            <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold uppercase tracking-tight">
-              <span className="flex size-9 items-center justify-center rounded-xl bg-accent text-accent-foreground">
-                <Activity className="size-5" aria-hidden="true" />
+            <Link href="/" aria-label="THRIVE Longevity Center — home" className="inline-flex items-center gap-3">
+              <span className="inline-flex rounded-2xl bg-white/95 p-2.5 shadow-card">
+                <Image
+                  src="/thrive-logo.png"
+                  alt=""
+                  width={160}
+                  height={160}
+                  className="h-14 w-auto"
+                />
               </span>
-              THRIVE LONGEVITY CENTER
+              <span className="font-display text-base font-semibold uppercase tracking-tight">
+                THRIVE LONGEVITY CENTER
+              </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm text-primary-foreground/75">
               {clinic.positioning}
@@ -87,9 +96,20 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2.5 text-sm text-primary-foreground/80">
               {getStarted.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="transition-colors hover:text-accent">
-                    {item.label}
-                  </Link>
+                  {item.href.startsWith("http") ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-accent"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link href={item.href} className="transition-colors hover:text-accent">
+                      {item.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

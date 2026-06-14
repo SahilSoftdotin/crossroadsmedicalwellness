@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { Activity, ArrowRight, Menu, Phone, X } from "lucide-react";
+import { ArrowRight, Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { clinic } from "@/lib/data/clinic";
@@ -44,7 +45,7 @@ export function SiteHeader() {
         <Link
           href="/"
           aria-label="THRIVE Longevity Center — go to homepage"
-          className="flex items-center gap-2 font-display text-lg font-semibold tracking-tight text-primary"
+          className="flex items-center gap-2.5"
           onClick={(e) => {
             setOpen(false);
             if (pathname === "/") {
@@ -55,12 +56,17 @@ export function SiteHeader() {
             }
           }}
         >
-          <span className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-            <Activity className="size-5" aria-hidden="true" />
-          </span>
-          <span className="leading-tight">
+          <Image
+            src="/thrive-logo.png"
+            alt=""
+            width={120}
+            height={120}
+            priority
+            className="h-12 w-auto sm:h-14"
+          />
+          <span className="leading-tight font-display text-lg font-semibold tracking-tight text-primary">
             THRIVE
-            <span className="block text-xs font-medium tracking-[0.2em] text-muted-foreground uppercase">
+            <span className="block text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
               Longevity Center
             </span>
           </span>
@@ -87,7 +93,7 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-2 lg:flex">
           <Button variant="ghost" size="sm" asChild>
-            <Link href="/coming-soon">Patient Portal</Link>
+            <a href="https://www.gethealthie.com/" target="_blank" rel="noopener noreferrer">Patient Portal</a>
           </Button>
           <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90" asChild>
             <Link href="/assessment">
@@ -123,9 +129,14 @@ export function SiteHeader() {
             ))}
             <div className="mt-2 flex flex-col gap-2 border-t border-border pt-4">
               <Button variant="outline" asChild>
-                <Link href="/coming-soon" onClick={() => setOpen(false)}>
+                <a
+                  href="https://www.gethealthie.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                >
                   Patient Portal
-                </Link>
+                </a>
               </Button>
               <Button asChild>
                 <Link href="/assessment" onClick={() => setOpen(false)}>

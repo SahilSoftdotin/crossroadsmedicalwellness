@@ -192,7 +192,7 @@ function SidebarContent({
           href="/"
           className="block text-center text-xs text-sidebar-foreground/50 hover:text-sidebar-foreground/80"
         >
-          Back to thrivelongevitycenter.com
+          Back to thrivelongevitycenter.org
         </Link>
       </div>
     </div>

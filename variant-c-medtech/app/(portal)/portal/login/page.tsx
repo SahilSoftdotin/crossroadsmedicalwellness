@@ -143,7 +143,7 @@ export default function PortalLoginPage() {
 
           <div className="mt-8 border-t border-border pt-6 text-center">
             <Link href="/" className="text-sm font-medium text-primary hover:underline">
-              Back to thrivelongevitycenter.com
+              Back to thrivelongevitycenter.org
             </Link>
           </div>
         </div>

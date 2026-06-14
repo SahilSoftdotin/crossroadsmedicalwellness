@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://thrivelongevitycenter.example"),
+  metadataBase: new URL("https://thrivelongevitycenter.org"),
   title: {
     default: "THRIVE Longevity Center | Athens, AL",
     template: "%s | THRIVE Longevity Center",
