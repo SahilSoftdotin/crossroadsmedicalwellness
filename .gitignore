@@ -4,6 +4,7 @@
 # Internal project notes (local only — not for the public repo)
 PROJECT-NOTES.md
 SECURITY-NOTES.md
+compliance/
 
 # Dependencies & build output (per-variant .gitignore also covers these)
 node_modules/

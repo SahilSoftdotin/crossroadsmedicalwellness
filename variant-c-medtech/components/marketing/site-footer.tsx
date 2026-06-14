@@ -132,6 +132,20 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 border-t border-primary-foreground/10 pt-6 text-xs text-primary-foreground/60">
+          <nav
+            aria-label="Legal"
+            className="mb-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2"
+          >
+            <Link href="/privacy" className="transition-colors hover:text-accent">
+              Privacy &amp; Notice of Privacy Practices
+            </Link>
+            <span aria-hidden="true" className="text-primary-foreground/30">
+              ·
+            </span>
+            <Link href="/accessibility" className="transition-colors hover:text-accent">
+              Accessibility
+            </Link>
+          </nav>
           <p className="text-center">
             © {new Date().getFullYear()} THRIVE LONGEVITY CENTER. All rights reserved. Hours and
             availability are illustrative — please call or text to confirm.

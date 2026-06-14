@@ -9,18 +9,21 @@ const isProd = process.env.NODE_ENV === "production";
  *   websockets for HMR. (A nonce-based strict-dynamic CSP is a recommended
  *   future hardening step — see PROJECT-NOTES.)
  */
+// Trusted CDN for the Sienna accessibility widget (script + its bundled assets).
+const CDN = "https://cdn.jsdelivr.net";
+
 const csp = [
   "default-src 'self'",
   "base-uri 'self'",
   "object-src 'none'",
   "frame-ancestors 'none'",
   "form-action 'self'",
-  "img-src 'self' data: blob: https://images.unsplash.com",
-  "font-src 'self' data:",
+  `img-src 'self' data: blob: https://images.unsplash.com ${CDN}`,
+  `font-src 'self' data: ${CDN}`,
   "frame-src 'self' https://www.google.com https://maps.google.com",
-  "style-src 'self' 'unsafe-inline'",
-  `script-src 'self' 'unsafe-inline'${isProd ? "" : " 'unsafe-eval'"}`,
-  `connect-src 'self'${isProd ? "" : " ws: wss:"}`,
+  `style-src 'self' 'unsafe-inline' ${CDN}`,
+  `script-src 'self' 'unsafe-inline' ${CDN}${isProd ? "" : " 'unsafe-eval'"}`,
+  `connect-src 'self' ${CDN}${isProd ? "" : " ws: wss:"}`,
   "upgrade-insecure-requests",
 ].join("; ");
 

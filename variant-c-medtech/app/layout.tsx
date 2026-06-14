@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -53,6 +54,12 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         {children}
+        {/* Sienna — free accessibility toolbar (contrast, font size, reading guide,
+            dyslexia font, etc.). Loaded after hydration so it never blocks paint. */}
+        <Script
+          src="https://cdn.jsdelivr.net/npm/sienna-accessibility/dist/sienna-accessibility.umd.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
